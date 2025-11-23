@@ -52,8 +52,12 @@ MizeKar/
 │   ├── FolderService.cs   # File system operations and watcher
 │   └── FontManager.cs     # Font management and Persian text support
 ├── Assets/                # Application assets
-│   └── fonts/             # Font files
-│       └── Shabnam/       # Shabnam Persian font family
+│   ├── fonts/             # Font files
+│   │   └── Shabnam/       # Shabnam Persian font family
+│   └── images/            # Background images
+│       ├── background.png # Main application background
+│       ├── splash.png     # Splash screen background
+│       └── dialog-background.jpg # Dialog window background
 ├── App.xaml               # Application entry point
 ├── MizeKar.csproj         # Project configuration
 └── MizeKar.sln            # Solution file
