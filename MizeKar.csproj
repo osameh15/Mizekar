@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+
+    <AssemblyTitle>MizeKar</AssemblyTitle>
+    <AssemblyDescription>Fullscreen Windows application for managing folder structures with Persian support</AssemblyDescription>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <RootNamespace>MizeKar</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.IO.FileSystem.Watcher" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Include Shabnam font files as embedded resources -->
+    <EmbeddedResource Include="Assets\fonts\Shabnam\*.ttf" />
+    <EmbeddedResource Include="Assets\fonts\Shabnam\*.eot" />
+    <EmbeddedResource Include="Assets\fonts\Shabnam\*.woff" />
+    <EmbeddedResource Include="Assets\fonts\Shabnam\*.woff2" />
+  </ItemGroup>
+
+</Project>

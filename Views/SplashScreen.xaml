@@ -1,0 +1,31 @@
+<Window x:Class="MizeKar.SplashScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStyle="None"
+        WindowState="Maximized"
+        ResizeMode="NoResize"
+        Background="#2C3E50"
+        Title="Mizekar">
+    
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Text="Mizekar" 
+                       FontSize="36" 
+                       FontWeight="Bold" 
+                       Foreground="White"
+                       HorizontalAlignment="Center"
+                       Margin="0,0,0,20"/>
+            <TextBlock Text="مدیریت پوشه‌ها" 
+                       FontSize="24" 
+                       Foreground="#ECF0F1"
+                       HorizontalAlignment="Center"/>
+            <ProgressBar IsIndeterminate="True" 
+                         Width="200" 
+                         Height="10" 
+                         Margin="0,20,0,0"
+                         Background="#34495E"
+                         Foreground="#3498DB"/>
+        </StackPanel>
+    </Grid>
+    
+</Window>

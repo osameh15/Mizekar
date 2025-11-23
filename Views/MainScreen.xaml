@@ -1,0 +1,73 @@
+<Window x:Class="MizeKar.MainScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStyle="None"
+        WindowState="Maximized"
+        ResizeMode="NoResize"
+        Background="#2C3E50"
+        Title="Mizekar - Main Screen">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <!-- Logo Section -->
+        <Border Grid.Row="0" 
+                Background="#34495E" 
+                Padding="20" 
+                BorderBrush="#1ABC9C" 
+                BorderThickness="0,0,0,2">
+            <TextBlock Text="Mizekar" 
+                       FontSize="32" 
+                       FontWeight="Bold" 
+                       Foreground="White"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"/>
+        </Border>
+        
+        <!-- Navigation Buttons -->
+        <StackPanel Grid.Row="1" 
+                    VerticalAlignment="Center" 
+                    HorizontalAlignment="Center"
+                    Width="300">
+            
+            <Button Content="ورود" 
+                    FontSize="18" 
+                    Background="#3498DB" 
+                    Foreground="White"
+                    Height="50" 
+                    Margin="0,0,0,15"
+                    Click="LoginButton_Click"/>
+            
+            <Button Content="درباره ما" 
+                    FontSize="18" 
+                    Background="#27AE60" 
+                    Foreground="White"
+                    Height="50" 
+                    Margin="0,0,0,15"
+                    Click="AboutUsButton_Click"/>
+            
+            <Button Content="ارتباط با ما" 
+                    FontSize="18" 
+                    FontFamily="Tahoma"
+                    Background="#E74C3C" 
+                    Foreground="White"
+                    Height="50" 
+                    Margin="0,0,0,15"
+                    Click="ContactUsButton_Click"/>
+                    
+            <!-- Exit Button -->
+            <Button Content="خروج" 
+                    FontSize="18" 
+                    FontFamily="Tahoma"
+                    Background="#7F8C8D" 
+                    Foreground="White"
+                    Height="50" 
+                    Margin="0,20,0,0"
+                    Click="ExitButton_Click"/>
+        </StackPanel>
+    </Grid>
+    
+</Window>

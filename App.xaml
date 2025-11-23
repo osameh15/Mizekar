@@ -1,0 +1,32 @@
+<Application x:Class="MizeKar.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="Views/SplashScreen.xaml">
+    <Application.Resources>
+        
+        <!-- Global Font Styles -->
+        <Style x:Key="PersianTextStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Shabnam"/>
+            <Setter Property="TextAlignment" Value="Right"/>
+        </Style>
+        
+        <Style x:Key="PersianButtonStyle" TargetType="Button">
+            <Setter Property="FontFamily" Value="Shabnam"/>
+        </Style>
+        
+        <Style x:Key="PersianLabelStyle" TargetType="Label">
+            <Setter Property="FontFamily" Value="Shabnam"/>
+        </Style>
+        
+        <Style x:Key="PersianTextBoxStyle" TargetType="TextBox">
+            <Setter Property="FontFamily" Value="Shabnam"/>
+        </Style>
+        
+        <!-- Default styles that auto-detect language -->
+        <Style TargetType="TextBlock" BasedOn="{StaticResource PersianTextStyle}"/>
+        <Style TargetType="Button" BasedOn="{StaticResource PersianButtonStyle}"/>
+        <Style TargetType="Label" BasedOn="{StaticResource PersianLabelStyle}"/>
+        <Style TargetType="TextBox" BasedOn="{StaticResource PersianTextBoxStyle}"/>
+        
+    </Application.Resources>
+</Application>
