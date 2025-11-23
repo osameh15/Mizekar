@@ -36,7 +36,7 @@ namespace MizeKar
             }
             
             FoldersItemsControl.ItemsSource = _folders;
-            UpdateStatus($"{_folders.Count} پوشه یافت شد");
+            UpdateStatus($"پوشه یافت شد {_folders.Count}");
         }
 
         private void OnFoldersChanged(object? sender, EventArgs e)
@@ -85,8 +85,10 @@ namespace MizeKar
         {
             if (e.Source is FrameworkElement element && element.Tag is string folderPath)
             {
+                var folderName = System.IO.Path.GetFileName(folderPath);
+
                 _folderService.OpenFolderInExplorer(folderPath);
-                UpdateStatus("پوشه در Windows Explorer باز شد");
+                UpdateStatus($"پوشه {folderName} با موفقیت باز شد");
             }
         }
 

@@ -4,7 +4,7 @@
         WindowStyle="None"
         WindowState="Maximized"
         ResizeMode="NoResize"
-        Title="Mizekar - مدیریت پوشه‌ها"
+        Title="Mizekar - Folder Management"
         Icon="/Assets/logo.png">
     
     <Grid>
@@ -28,39 +28,26 @@
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
                 
-                <!-- Left Side: Add Folder Button -->
+                <!-- Left Side: Exit Button -->
                 <Button Grid.Column="0"
-                        Width="120" Height="45"
-                        Background="Transparent" BorderThickness="0"
-                        Margin="0,0,10,0"
-                        Click="CreateFolderButton_Click"
-                        Cursor="Hand">
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                        <Image Source="/Assets/icons/add-folder.png" Width="24" Height="24" Margin="0,0,8,0"/>
-                        <TextBlock Text="ایجاد پوشه" FontSize="14" Foreground="White" VerticalAlignment="Center"/>
-                    </StackPanel>
-                </Button>
-                
-                <!-- Left Side: Home Button -->
-                <Button Grid.Column="1"
                         Width="100" Height="45"
                         Background="Transparent" BorderThickness="0"
                         Margin="0,0,10,0"
-                        Click="BackButton_Click"
+                        Click="ExitButton_Click"
                         Cursor="Hand">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                        <Image Source="/Assets/icons/home.png" Width="24" Height="24" Margin="0,0,8,0"/>
-                        <TextBlock Text="خانه" FontSize="14" Foreground="White" VerticalAlignment="Center"/>
+                        <TextBlock Text="خروج" FontSize="14" Foreground="White" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                        <Image Source="/Assets/icons/exit.png" Width="24" Height="24"/>
                     </StackPanel>
                 </Button>
                 
                 <!-- Center: Title -->
-                <TextBlock Grid.Column="2"
+                <TextBlock Grid.Column="1"
                            Text="مدیریت پوشه‌ها" 
                            FontSize="28" 
                            FontWeight="Bold" 
@@ -68,15 +55,28 @@
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"/>
                 
-                <!-- Right Side: Exit Button -->
-                <Button Grid.Column="3"
+                <!-- Right Side: Home Button -->
+                <Button Grid.Column="2"
                         Width="100" Height="45"
                         Background="Transparent" BorderThickness="0"
-                        Click="ExitButton_Click"
+                        Margin="0,0,10,0"
+                        Click="BackButton_Click"
                         Cursor="Hand">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                        <Image Source="/Assets/icons/exit.png" Width="24" Height="24" Margin="0,0,8,0"/>
-                        <TextBlock Text="خروج" FontSize="14" Foreground="White" VerticalAlignment="Center"/>
+                        <TextBlock Text="خانه" FontSize="14" Foreground="White" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                        <Image Source="/Assets/icons/home.png" Width="24" Height="24"/>
+                    </StackPanel>
+                </Button>
+                
+                <!-- Right Side: Add Folder Button -->
+                <Button Grid.Column="3"
+                        Width="120" Height="45"
+                        Background="Transparent" BorderThickness="0"
+                        Click="CreateFolderButton_Click"
+                        Cursor="Hand">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <TextBlock Text="ایجاد پوشه" FontSize="14" Foreground="White" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                        <Image Source="/Assets/icons/add-folder.png" Width="24" Height="24"/>
                     </StackPanel>
                 </Button>
             </Grid>
@@ -127,8 +127,8 @@
                                            Click="DeleteFolder_Click"
                                            Tag="{Binding Path}">
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                            <Image Source="/Assets/icons/remove.png" Width="18" Height="18" Margin="0,0,6,0"/>
-                                            <TextBlock Text="حذف" FontSize="12" Foreground="White" VerticalAlignment="Center"/>
+                                            <TextBlock Text="حذف" FontSize="12" Foreground="White" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                                            <Image Source="/Assets/icons/remove.png" Width="18" Height="18"/>
                                         </StackPanel>
                                     </Button>
                                             
@@ -137,8 +137,8 @@
                                            Click="ViewFolder_Click"
                                            Tag="{Binding Path}">
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                            <Image Source="/Assets/icons/view.png" Width="18" Height="18" Margin="0,0,6,0"/>
-                                            <TextBlock Text="مشاهده" FontSize="12" Foreground="White" VerticalAlignment="Center"/>
+                                            <TextBlock Text="مشاهده" FontSize="12" Foreground="White" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                                            <Image Source="/Assets/icons/view.png" Width="18" Height="18"/>
                                         </StackPanel>
                                     </Button>
                                 </StackPanel>
@@ -151,13 +151,15 @@
         
         <!-- Status Bar -->
         <Border Grid.Row="2" 
-                Background="#34495E" 
-                Padding="10">
+                Padding="10"
+                BorderBrush="#fff" 
+                BorderThickness="0,0.5,0,0">
             <TextBlock x:Name="StatusTextBlock"
                        Text="آماده" 
-                       FontSize="12" 
-                       Foreground="#BDC3C7"
-                       HorizontalAlignment="Center"/>
+                       FontSize="14" 
+                       Foreground="#e6e6e6"
+                       HorizontalAlignment="Right"
+                       Margin="0, 0, 15, 0"/>
         </Border>
     </Grid>
     
