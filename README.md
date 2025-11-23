@@ -13,14 +13,17 @@ A modern, fullscreen Windows desktop application for managing folder structures 
 ## 📸 Screenshots
 
 ### Splash Screen
+
 - Displays for 2 seconds with app branding
 - Automatic transition to main screen
 
 ### Main Screen
+
 - Fullscreen navigation with Persian/English options
 - Login, About Us, Contact Us, and Exit buttons
 
 ### Folder Management
+
 - Dynamic display of folder structure
 - Create, delete, and open folders
 - Real-time updates with file system watcher
@@ -59,6 +62,7 @@ MizeKar/
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Windows 10 or later
 - .NET 8.0 SDK or later
 - Visual Studio 2022 or Visual Studio Code (recommended)
@@ -66,11 +70,13 @@ MizeKar/
 ### Building the Application
 
 #### Using Visual Studio
+
 1. Open `MizeKar.sln` in Visual Studio
 2. Build the solution (Ctrl+Shift+B)
 3. Run the application (F5)
 
 #### Using Command Line
+
 ```bash
 # Navigate to the project directory
 cd MizeKar
@@ -86,6 +92,7 @@ dotnet run
 ```
 
 ### Creating a Release Build
+
 ```bash
 # Create release build
 dotnet build -c Release
@@ -97,16 +104,19 @@ dotnet publish -c Release -r win-x64 --self-contained
 ## 📋 Usage
 
 ### Splash Screen
+
 - Application starts with a 2-second splash screen
 - Automatically transitions to main screen
 
 ### Main Navigation
+
 - **ورود (Login)** - Opens folder management screen
 - **درباره ما (About Us)** - Shows application information
 - **ارتباط با ما (Contact Us)** - Shows contact information
 - **خروج (Exit)** - Closes the application
 
 ### Folder Management
+
 - **Data Folder**: Application creates a "Data" folder in the application directory
 - **Persian Support**: Full support for Persian folder names using UTF-8 encoding
 - **Real-time Updates**: UI updates immediately when folders are added or deleted
@@ -116,6 +126,7 @@ dotnet publish -c Release -r win-x64 --self-contained
   - Open folders in Windows Explorer
 
 ### Keyboard Shortcuts
+
 - `Escape` - Go back to previous screen
 - `Ctrl+N` - Create new folder
 - `Enter` - Confirm dialog actions
@@ -123,12 +134,14 @@ dotnet publish -c Release -r win-x64 --self-contained
 ## 🔧 Configuration
 
 Key configuration constants in `App.xaml.cs`:
+
 - `DATA_FOLDER_NAME = "Data"` - Root data folder name
 - `SPLASH_SCREEN_DURATION_MS = 2000` - Splash screen duration
 
 ## 🧪 Testing
 
 Test the following features:
+
 1. **Fullscreen behavior** on different screen resolutions
 2. **Persian folder name** creation and display
 3. **Real-time folder updates** (add/delete folders externally)
@@ -157,13 +170,14 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## 📞 Support
 
 For support and questions:
-- Email: support@mizekar.com
-- Website: www.mizekar.com
+
+- Email: osirandoust@gmail.com
+- Contact Us: [Telegram](https://t.me/osameh_ir)
 
 ## 🗂️ Related Projects
 
 - [Project Documentation](./docs/)
-- [Build Instructions](./BUILD_INSTRUCTIONS.md)
+- [Build Instructions](./docs/BUILD_INSTRUCTIONS.md)
 
 ---
 
