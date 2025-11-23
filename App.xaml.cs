@@ -6,7 +6,7 @@ namespace MizeKar
     {
         // Application-level constants and configuration
         public const string DATA_FOLDER_NAME = "Data";
-        public const int SPLASH_SCREEN_DURATION_MS = 2000;
+        public const int SPLASH_SCREEN_DURATION_MS = 5000;
         
         protected override void OnStartup(StartupEventArgs e)
         {
