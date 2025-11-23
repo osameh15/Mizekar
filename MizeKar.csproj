@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
@@ -31,6 +31,7 @@
     
     <!-- Include application logo -->
     <Resource Include="Assets\logo.png" />
+    <Resource Include="Assets\logo-white.png" />
     
     <!-- Include icon images as WPF resources and copy to output directory -->
     <Resource Include="Assets\icons\about-us.png">
