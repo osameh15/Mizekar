@@ -18,18 +18,35 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         
-        <!-- Logo Section -->
+        <!-- Header Section -->
         <Border Grid.Row="0" 
-                Background="#34495E" 
-                Padding="20" 
-                BorderBrush="#1ABC9C" 
+                Background="Transparent" 
+                Padding="10" 
+                BorderBrush="#fff" 
                 BorderThickness="0,0,0,2">
-            <TextBlock Text="Mizekar" 
-                       FontSize="32" 
-                       FontWeight="Bold" 
-                       Foreground="White"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <!-- Logo on the Left -->
+                <Image Grid.Column="0"
+                       Source="/Assets/logo-white.png" 
+                       Width="64" Height="64"
+                       VerticalAlignment="Center"
+                       Margin="0,0,20,0"/>
+                
+                <!-- Text on the Right -->
+                <TextBlock Grid.Column="1"
+                           Text="میزکار - مدرسه شاهد دخترانه شهیده شهناز کریمی" 
+                           FontSize="32" 
+                           FontWeight="Bold" 
+                           Foreground="White"
+                           HorizontalAlignment="Right"
+                           VerticalAlignment="Center"
+                           Margin="0, 0, 20, 0"/>
+            </Grid>
         </Border>
         
         <!-- Navigation Buttons -->
@@ -38,49 +55,69 @@
                     HorizontalAlignment="Center"
                     Width="300">
             
-            <Button Width="140" Height="90"
+            <Button Width="200" Height="64"
                    Background="Transparent" BorderThickness="0"
                    Click="LoginButton_Click"
                    Margin="0,0,0,20"
-                   Cursor="Hand">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Image Source="/Assets/icons/enter.png" Width="32" Height="32" Margin="0,0,10,0"/>
-                    <TextBlock Text="ورود" FontSize="16" Foreground="White" VerticalAlignment="Center"/>
-                </StackPanel>
+                   Cursor="Hand"
+                   HorizontalContentAlignment="Right">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="ورود" FontSize="24" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+                    <Image Grid.Column="1" Source="/Assets/icons/enter.png" Width="32" Height="32" VerticalAlignment="Center"/>
+                </Grid>
             </Button>
             
-            <Button Width="140" Height="90"
+            <Button Width="200" Height="64"
                    Background="Transparent" BorderThickness="0"
                    Click="AboutUsButton_Click"
                    Margin="0,0,0,20"
-                   Cursor="Hand">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Image Source="/Assets/icons/about-us.png" Width="32" Height="32" Margin="0,0,10,0"/>
-                    <TextBlock Text="درباره ما" FontSize="16" Foreground="White" VerticalAlignment="Center"/>
-                </StackPanel>
+                   Cursor="Hand"
+                   HorizontalContentAlignment="Right">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="درباره ما" FontSize="24" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+                    <Image Grid.Column="1" Source="/Assets/icons/about-us.png" Width="32" Height="32" VerticalAlignment="Center"/>
+                </Grid>
             </Button>
             
-            <Button Width="140" Height="90"
+            <Button Width="200" Height="64"
                    Background="Transparent" BorderThickness="0"
                    Click="ContactUsButton_Click"
                    Margin="0,0,0,20"
-                   Cursor="Hand">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Image Source="/Assets/icons/contact-us.png" Width="32" Height="32" Margin="0,0,10,0"/>
-                    <TextBlock Text="ارتباط با ما" FontSize="16" Foreground="White" VerticalAlignment="Center"/>
-                </StackPanel>
+                   Cursor="Hand"
+                   HorizontalContentAlignment="Right">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="ارتباط با ما" FontSize="24" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+                    <Image Grid.Column="1" Source="/Assets/icons/contact-us.png" Width="32" Height="32" VerticalAlignment="Center"/>
+                </Grid>
             </Button>
                     
             <!-- Exit Button -->
-            <Button Width="140" Height="90"
+            <Button Width="200" Height="64"
                    Background="Transparent" BorderThickness="0"
                    Click="ExitButton_Click"
-                   Margin="0,20,0,0"
-                   Cursor="Hand">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Image Source="/Assets/icons/exit.png" Width="32" Height="32" Margin="0,0,10,0"/>
-                    <TextBlock Text="خروج" FontSize="16" Foreground="White" VerticalAlignment="Center"/>
-                </StackPanel>
+                   Margin="0,30,0,0"
+                   Cursor="Hand"
+                   HorizontalContentAlignment="Right">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="خروج" FontSize="24" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+                    <Image Grid.Column="1" Source="/Assets/icons/exit.png" Width="32" Height="32" VerticalAlignment="Center"/>
+                </Grid>
             </Button>
         </StackPanel>
     </Grid>

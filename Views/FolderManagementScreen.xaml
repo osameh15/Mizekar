@@ -21,9 +21,9 @@
         
         <!-- Header -->
         <Border Grid.Row="0" 
-                Background="#34495E" 
-                Padding="20" 
-                BorderBrush="#1ABC9C" 
+                Background="Transparent" 
+                Padding="10" 
+                BorderBrush="#fff" 
                 BorderThickness="0,0,0,2">
             <Grid>
                 <Grid.ColumnDefinitions>

@@ -6,7 +6,7 @@
         WindowState="Maximized"
         ResizeMode="NoResize"
         Title="Mizekar - Splash Screen"
-        Icon="/Assets/logo.png" av:DesignWidth="350.986" av:DesignHeight="255.049">
+        Icon="/Assets/logo.png">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -22,21 +22,27 @@
             <ImageBrush ImageSource="pack://application:,,,/Assets/images/splash.png" Stretch="UniformToFill"/>
         </Grid.Background>
 
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1">
+        <StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Center" Grid.Column="1" Margin="0, 80, 0, 0">
+            <!-- Logo -->
+            <Image Source="/Assets/logo.png" 
+                   Width="120" Height="120"
+                   HorizontalAlignment="Center"
+                   Margin="0,0,0,30"/>
+            
             <TextBlock Text="میزکار - مدرسه شاهد دختران شهیده شهناز کریمی " 
                        FontSize="36" 
                        FontWeight="Bold" 
                        Foreground="Black"
                        HorizontalAlignment="Center"
-                       Margin="0,0,0,20"/>
+                       Margin="0,0,0,30"/>
             <TextBlock Text="لطفا کمی صبر کنید" 
                        FontSize="24" 
                        Foreground="#000"
                        HorizontalAlignment="Center"/>
             <ProgressBar IsIndeterminate="True" 
-                         Width="200" 
+                         Width="auto" 
                          Height="10" 
-                         Margin="0,20,0,0"
+                         Margin="0,30,0,0"
                          Background="#34495E"
                          Foreground="#3498DB"/>
         </StackPanel>
