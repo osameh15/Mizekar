@@ -4,7 +4,8 @@
         WindowStyle="None"
         WindowState="Maximized"
         ResizeMode="NoResize"
-        Title="Mizekar - Main Screen">
+        Title="Mizekar - Main Screen"
+        Icon="/Assets/logo.png">
     
     <Grid>
         <!-- Main Background Image -->
@@ -37,85 +38,49 @@
                     HorizontalAlignment="Center"
                     Width="300">
             
-            <Button Width="120" Height="80"
+            <Button Width="140" Height="90"
                    Background="Transparent" BorderThickness="0"
                    Click="LoginButton_Click"
-                   Margin="0,0,0,20">
+                   Margin="0,0,0,20"
+                   Cursor="Hand">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Image Source="/Assets/icons/enter.png" Width="24" Height="24" Margin="0,0,8,0"/>
-                    <TextBlock Text="ورود" FontSize="14" Foreground="White" VerticalAlignment="Center"/>
+                    <Image Source="/Assets/icons/enter.png" Width="32" Height="32" Margin="0,0,10,0"/>
+                    <TextBlock Text="ورود" FontSize="16" Foreground="White" VerticalAlignment="Center"/>
                 </StackPanel>
-                <Button.Style>
-                    <Style TargetType="Button">
-                        <Setter Property="Cursor" Value="Hand"/>
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#CC3498DB"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
             </Button>
             
-            <Button Width="120" Height="80"
+            <Button Width="140" Height="90"
                    Background="Transparent" BorderThickness="0"
                    Click="AboutUsButton_Click"
-                   Margin="0,0,0,20">
+                   Margin="0,0,0,20"
+                   Cursor="Hand">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Image Source="/Assets/icons/about-us.png" Width="24" Height="24" Margin="0,0,8,0"/>
-                    <TextBlock Text="درباره ما" FontSize="14" Foreground="White" VerticalAlignment="Center"/>
+                    <Image Source="/Assets/icons/about-us.png" Width="32" Height="32" Margin="0,0,10,0"/>
+                    <TextBlock Text="درباره ما" FontSize="16" Foreground="White" VerticalAlignment="Center"/>
                 </StackPanel>
-                <Button.Style>
-                    <Style TargetType="Button">
-                        <Setter Property="Cursor" Value="Hand"/>
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#CC27AE60"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
             </Button>
             
-            <Button Width="120" Height="80"
+            <Button Width="140" Height="90"
                    Background="Transparent" BorderThickness="0"
                    Click="ContactUsButton_Click"
-                   Margin="0,0,0,20">
+                   Margin="0,0,0,20"
+                   Cursor="Hand">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Image Source="/Assets/icons/contact-us.png" Width="24" Height="24" Margin="0,0,8,0"/>
-                    <TextBlock Text="ارتباط با ما" FontSize="14" Foreground="White" VerticalAlignment="Center"/>
+                    <Image Source="/Assets/icons/contact-us.png" Width="32" Height="32" Margin="0,0,10,0"/>
+                    <TextBlock Text="ارتباط با ما" FontSize="16" Foreground="White" VerticalAlignment="Center"/>
                 </StackPanel>
-                <Button.Style>
-                    <Style TargetType="Button">
-                        <Setter Property="Cursor" Value="Hand"/>
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#CCE74C3C"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
             </Button>
                     
             <!-- Exit Button -->
-            <Button Width="120" Height="80"
+            <Button Width="140" Height="90"
                    Background="Transparent" BorderThickness="0"
                    Click="ExitButton_Click"
-                   Margin="0,20,0,0">
+                   Margin="0,20,0,0"
+                   Cursor="Hand">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Image Source="/Assets/icons/exit.png" Width="24" Height="24" Margin="0,0,8,0"/>
-                    <TextBlock Text="خروج" FontSize="14" Foreground="White" VerticalAlignment="Center"/>
+                    <Image Source="/Assets/icons/exit.png" Width="32" Height="32" Margin="0,0,10,0"/>
+                    <TextBlock Text="خروج" FontSize="16" Foreground="White" VerticalAlignment="Center"/>
                 </StackPanel>
-                <Button.Style>
-                    <Style TargetType="Button">
-                        <Setter Property="Cursor" Value="Hand"/>
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#CC7F8C8D"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
             </Button>
         </StackPanel>
     </Grid>

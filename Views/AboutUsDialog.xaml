@@ -2,13 +2,14 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="درباره ما"
-        Width="450"
-        Height="350"
+        Width="500"
+        Height="320"
         WindowStyle="None"
         WindowStartupLocation="CenterOwner"
         ResizeMode="NoResize"
         Background="Transparent"
-        AllowsTransparency="True">
+        AllowsTransparency="True"
+        Icon="/Assets/logo.png">
     
     <Grid>
         <!-- Dialog Background Image -->
@@ -24,7 +25,7 @@
                 </Grid.RowDefinitions>
                 
                 <!-- Header with Close Button -->
-                <Grid Grid.Row="0" Margin="0,0,0,15">
+                <Grid Grid.Row="0" Margin="0,0,0,30">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="Auto"/>
@@ -37,29 +38,20 @@
                               HorizontalAlignment="Center"/>
                     
                     <!-- Close Button -->
-                    <Button Grid.Column="1" Width="80" Height="30" 
+                    <Button Grid.Column="1" Width="100" Height="35" 
                            Background="Transparent" BorderThickness="0"
-                           Click="CloseButton_Click">
+                           Click="CloseButton_Click"
+                            Cursor="Hand">
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                            <Image Source="/Assets/icons/close.png" Width="14" Height="14" Margin="0,0,6,0"/>
-                            <TextBlock Text="بستن" FontSize="12" Foreground="#2C3E50" VerticalAlignment="Center"/>
+                            <TextBlock Text="بستن" FontSize="14" Foreground="#2C3E50" VerticalAlignment="Center"/>
+                            <Image Source="/Assets/icons/close.png" Width="24" Height="24" Margin="8,0,0,0"/>
                         </StackPanel>
-                        <Button.Style>
-                            <Style TargetType="Button">
-                                <Setter Property="Cursor" Value="Hand"/>
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="#CC000000"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Button.Style>
                     </Button>
                 </Grid>
                 
                 <!-- Content -->
                 <StackPanel Grid.Row="1">
-                    <TextBlock Text="Mizekar" 
+                    <TextBlock Text="میزکار- مدرسه شاهد شهیده شهناز کریمی" 
                                FontSize="24" 
                                FontWeight="Bold" 
                                Foreground="#2C3E50"
@@ -78,11 +70,11 @@
                                HorizontalAlignment="Center"
                                Margin="0,0,0,15"/>
                     
-                    <TextBlock Text="این برنامه برای مدیریت آسان پوشه‌ها با پشتیبانی از زبان فارسی طراحی شده است." 
+                    <TextBlock Text="این برنامه برای مدیریت آسان پوشه‌ها با پشتیبانی از زبان فارسی طراحی شده است" 
                                FontSize="12" 
                                Foreground="#2C3E50"
                                TextWrapping="Wrap"
-                               TextAlignment="Center"
+                               TextAlignment="Right"
                                Margin="0,0,0,20"/>
                 </StackPanel>
             </Grid>

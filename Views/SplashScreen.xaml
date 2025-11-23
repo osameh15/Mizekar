@@ -5,7 +5,8 @@
         WindowStyle="None"
         WindowState="Maximized"
         ResizeMode="NoResize"
-        Title="Mizekar - Splash Screen" av:DesignWidth="350.986" av:DesignHeight="255.049">
+        Title="Mizekar - Splash Screen"
+        Icon="/Assets/logo.png" av:DesignWidth="350.986" av:DesignHeight="255.049">
 
     <Grid>
         <Grid.RowDefinitions>

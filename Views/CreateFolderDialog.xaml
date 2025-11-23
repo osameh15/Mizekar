@@ -27,7 +27,7 @@
                           Margin="0,0,0,15"/>
                 
                 <!-- Content -->
-                <TextBlock Text="نام پوشه جدید را وارد کنید:" 
+                <TextBlock Text=":نام پوشه جدید را وارد کنید" 
                            FontSize="16" 
                            FontWeight="SemiBold"
                            Foreground="#2C3E50"
@@ -47,43 +47,25 @@
                 <StackPanel Orientation="Horizontal" 
                             HorizontalAlignment="Center" 
                             Margin="0,25,0,0">
-                    <Button Width="80" Height="40"
+                    <Button Width="100" Height="45"
                            Background="Transparent" BorderThickness="0"
                            Click="CancelButton_Click"
+                           Cursor="Hand"
                            Margin="0,0,10,0">
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                            <Image Source="/Assets/icons/close.png" Width="16" Height="16" Margin="0,0,6,0"/>
-                            <TextBlock Text="انصراف" FontSize="12" Foreground="#2C3E50" VerticalAlignment="Center"/>
+                            <TextBlock Text="انصراف" FontSize="14" Foreground="#2C3E50" VerticalAlignment="Center"/>
+                            <Image Source="/Assets/icons/close.png" Width="20" Height="20" Margin="8,0,0,0"/>
                         </StackPanel>
-                        <Button.Style>
-                            <Style TargetType="Button">
-                                <Setter Property="Cursor" Value="Hand"/>
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="#CC95A5A6"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Button.Style>
                     </Button>
                             
-                    <Button Width="80" Height="40"
+                    <Button Width="100" Height="45"
                            Background="Transparent" BorderThickness="0"
-                           Click="CreateButton_Click">
+                           Click="CreateButton_Click"
+                           Cursor="Hand">
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                            <Image Source="/Assets/icons/confirm.png" Width="16" Height="16" Margin="0,0,6,0"/>
-                            <TextBlock Text="تأیید" FontSize="12" Foreground="#2C3E50" VerticalAlignment="Center"/>
+                            <TextBlock Text="تأیید" FontSize="14" Foreground="#2C3E50" VerticalAlignment="Center"/>
+                            <Image Source="/Assets/icons/confirm.png" Width="20" Height="20" Margin="8,0,0,0"/>
                         </StackPanel>
-                        <Button.Style>
-                            <Style TargetType="Button">
-                                <Setter Property="Cursor" Value="Hand"/>
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="#CC27AE60"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Button.Style>
                     </Button>
                 </StackPanel>
             </StackPanel>
