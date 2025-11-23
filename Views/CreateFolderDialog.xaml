@@ -7,43 +7,49 @@
         WindowStartupLocation="CenterOwner"
         ResizeMode="NoResize">
     
-    <Grid Background="#ECF0F1" Margin="20">
-        <StackPanel>
-            <TextBlock Text="نام پوشه جدید را وارد کنید:" 
-                       FontSize="16" 
-                       FontWeight="SemiBold"
-                       Foreground="#2C3E50"
-                       Margin="0,0,0,15"/>
-            
-            <TextBox x:Name="FolderNameTextBox"
-                     FontSize="14"
-                     Height="35"
-                     Padding="10"
-                     Background="White"
-                     BorderBrush="#BDC3C7"
-                     BorderThickness="1"
-                     TextAlignment="Right"
-                     KeyDown="FolderNameTextBox_KeyDown"/>
-            
-            <StackPanel Orientation="Horizontal" 
-                        HorizontalAlignment="Center" 
-                        Margin="0,25,0,0">
-                <Button Content="ایجاد" 
-                        Width="80" 
-                        Height="35"
-                        Background="#27AE60" 
-                        Foreground="White"
-                        Click="CreateButton_Click"
-                        Margin="0,0,10,0"/>
-                        
-                <Button Content="انصراف" 
-                        Width="80" 
-                        Height="35"
-                        Background="#95A5A6" 
-                        Foreground="White"
-                        Click="CancelButton_Click"/>
+    <Grid>
+        <!-- Dialog Background Image -->
+        <Grid.Background>
+            <ImageBrush ImageSource="pack://application:,,,/Assets/images/dialog-background.jpg" Stretch="Fill"/>
+        </Grid.Background>
+        
+        <Border Margin="20" Background="#FFFFFF" Opacity="0.95" CornerRadius="10" Padding="15">
+            <StackPanel>
+                <TextBlock Text="نام پوشه جدید را وارد کنید:" 
+                           FontSize="16" 
+                           FontWeight="SemiBold"
+                           Foreground="#2C3E50"
+                           Margin="0,0,0,15"/>
+                
+                <TextBox x:Name="FolderNameTextBox"
+                         FontSize="14"
+                         Height="35"
+                         Padding="10"
+                         Background="White"
+                         BorderBrush="#BDC3C7"
+                         BorderThickness="1"
+                         TextAlignment="Right"
+                         KeyDown="FolderNameTextBox_KeyDown"/>
+                
+                <StackPanel Orientation="Horizontal" 
+                            HorizontalAlignment="Center" 
+                            Margin="0,25,0,0">
+                    <Button Content="ایجاد" 
+                            Width="80" 
+                            Height="35"
+                            Background="#27AE60" 
+                            Foreground="White"
+                            Click="CreateButton_Click"
+                            Margin="0,0,10,0"/>
+                            
+                    <Button Content="انصراف" 
+                            Width="80" 
+                            Height="35"
+                            Background="#95A5A6" 
+                            Foreground="White"
+                            Click="CancelButton_Click"/>
+                </StackPanel>
             </StackPanel>
-        </StackPanel>
+        </Border>
     </Grid>
-    
 </Window>

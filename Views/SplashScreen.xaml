@@ -4,10 +4,14 @@
         WindowStyle="None"
         WindowState="Maximized"
         ResizeMode="NoResize"
-        Background="#2C3E50"
         Title="Mizekar">
     
     <Grid>
+        <!-- Splash Background Image -->
+        <Grid.Background>
+            <ImageBrush ImageSource="pack://application:,,,/Assets/images/splash.png" Stretch="UniformToFill"/>
+        </Grid.Background>
+        
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
             <TextBlock Text="Mizekar" 
                        FontSize="36" 

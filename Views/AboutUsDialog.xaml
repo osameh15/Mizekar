@@ -7,42 +7,48 @@
         WindowStartupLocation="CenterOwner"
         ResizeMode="NoResize">
     
-    <Grid Background="#ECF0F1" Margin="20">
-        <StackPanel>
-            <TextBlock Text="Mizekar" 
-                       FontSize="24" 
-                       FontWeight="Bold" 
-                       Foreground="#2C3E50"
-                       HorizontalAlignment="Center"
-                       Margin="0,0,0,20"/>
-            
-            <TextBlock Text="برنامه مدیریت پوشه‌ها" 
-                       FontSize="16" 
-                       Foreground="#34495E"
-                       HorizontalAlignment="Center"
-                       Margin="0,0,0,15"/>
-            
-            <TextBlock Text="نسخه ۱.۰.۰" 
-                       FontSize="14" 
-                       Foreground="#7F8C8D"
-                       HorizontalAlignment="Center"
-                       Margin="0,0,0,20"/>
-            
-            <TextBlock Text="این برنامه برای مدیریت آسان پوشه‌ها با پشتیبانی از زبان فارسی طراحی شده است." 
-                       FontSize="12" 
-                       Foreground="#2C3E50"
-                       TextWrapping="Wrap"
-                       TextAlignment="Center"
-                       Margin="0,0,0,30"/>
-            
-            <Button Content="بستن" 
-                    Width="100" 
-                    Height="35"
-                    Background="#3498DB" 
-                    Foreground="White"
-                    Click="CloseButton_Click"
-                    HorizontalAlignment="Center"/>
-        </StackPanel>
+    <Grid>
+        <!-- Dialog Background Image -->
+        <Grid.Background>
+            <ImageBrush ImageSource="pack://application:,,,/Assets/images/dialog-background.jpg" Stretch="Fill"/>
+        </Grid.Background>
+        
+        <Border Margin="20" Background="#FFFFFF" Opacity="0.95" CornerRadius="10" Padding="15">
+            <StackPanel>
+                <TextBlock Text="Mizekar" 
+                           FontSize="24" 
+                           FontWeight="Bold" 
+                           Foreground="#2C3E50"
+                           HorizontalAlignment="Center"
+                           Margin="0,0,0,20"/>
+                
+                <TextBlock Text="برنامه مدیریت پوشه‌ها" 
+                           FontSize="16" 
+                           Foreground="#34495E"
+                           HorizontalAlignment="Center"
+                           Margin="0,0,0,15"/>
+                
+                <TextBlock Text="نسخه ۱.۰.۰" 
+                           FontSize="14" 
+                           Foreground="#7F8C8D"
+                           HorizontalAlignment="Center"
+                           Margin="0,0,0,20"/>
+                
+                <TextBlock Text="این برنامه برای مدیریت آسان پوشه‌ها با پشتیبانی از زبان فارسی طراحی شده است." 
+                           FontSize="12" 
+                           Foreground="#2C3E50"
+                           TextWrapping="Wrap"
+                           TextAlignment="Center"
+                           Margin="0,0,0,30"/>
+                
+                <Button Content="بستن" 
+                        Width="100" 
+                        Height="35"
+                        Background="#3498DB" 
+                        Foreground="White"
+                        Click="CloseButton_Click"
+                        HorizontalAlignment="Center"/>
+            </StackPanel>
+        </Border>
     </Grid>
-    
 </Window>

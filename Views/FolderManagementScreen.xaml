@@ -4,10 +4,14 @@
         WindowStyle="None"
         WindowState="Maximized"
         ResizeMode="NoResize"
-        Background="#2C3E50"
         Title="Mizekar - مدیریت پوشه‌ها">
     
     <Grid>
+        <!-- Folder Management Background Image -->
+        <Grid.Background>
+            <ImageBrush ImageSource="pack://application:,,,/Assets/images/background.png" Stretch="UniformToFill"/>
+        </Grid.Background>
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
