@@ -26,12 +26,58 @@
                 BorderThickness="0,0,0,2">
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
                 
-                <TextBlock Grid.Column="0"
+                <!-- Left Side: Add Folder Button -->
+                <Button Grid.Column="0"
+                        Width="100" Height="40"
+                        Background="Transparent" BorderThickness="0"
+                        Margin="0,0,10,0"
+                        Click="CreateFolderButton_Click">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Image Source="/Assets/icons/add-folder.png" Width="16" Height="16" Margin="0,0,6,0"/>
+                        <TextBlock Text="ایجاد پوشه" FontSize="12" Foreground="White" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Cursor" Value="Hand"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#CC27AE60"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                
+                <!-- Left Side: Home Button -->
+                <Button Grid.Column="1"
+                        Width="80" Height="40"
+                        Background="Transparent" BorderThickness="0"
+                        Margin="0,0,10,0"
+                        Click="BackButton_Click">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Image Source="/Assets/icons/home.png" Width="16" Height="16" Margin="0,0,6,0"/>
+                        <TextBlock Text="خانه" FontSize="12" Foreground="White" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Cursor" Value="Hand"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#CCE74C3C"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                
+                <!-- Center: Title -->
+                <TextBlock Grid.Column="2"
                            Text="مدیریت پوشه‌ها" 
                            FontSize="28" 
                            FontWeight="Bold" 
@@ -39,24 +85,26 @@
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"/>
                 
-                <Button Grid.Column="1"
-                        Content="بازگشت" 
-                        FontSize="14" 
-                        Background="#E74C3C" 
-                        Foreground="White"
-                        Width="80" 
-                        Height="35"
-                        Margin="0,0,10,0"
-                        Click="BackButton_Click"/>
-                        
-                <Button Grid.Column="2"
-                        Content="ایجاد پوشه جدید" 
-                        FontSize="14" 
-                        Background="#27AE60" 
-                        Foreground="White"
-                        Width="120" 
-                        Height="35"
-                        Click="CreateFolderButton_Click"/>
+                <!-- Right Side: Exit Button -->
+                <Button Grid.Column="3"
+                        Width="80" Height="40"
+                        Background="Transparent" BorderThickness="0"
+                        Click="ExitButton_Click">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Image Source="/Assets/icons/exit.png" Width="16" Height="16" Margin="0,0,6,0"/>
+                        <TextBlock Text="خروج" FontSize="12" Foreground="White" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Cursor" Value="Hand"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#CC7F8C8D"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
             </Grid>
         </Border>
         
@@ -99,24 +147,46 @@
                                 <StackPanel Grid.Row="1" 
                                             Orientation="Horizontal" 
                                             HorizontalAlignment="Center">
-                                    <Button Content="مشاهده" 
-                                            FontSize="12" 
-                                            Background="#3498DB" 
-                                            Foreground="White"
-                                            Width="70" 
-                                            Height="25"
-                                            Margin="0,0,5,0"
-                                            Click="ViewFolder_Click"
-                                            Tag="{Binding Path}"/>
+                                    <Button Width="70" Height="30"
+                                           Background="Transparent" BorderThickness="0"
+                                           Margin="0,0,5,0"
+                                           Click="DeleteFolder_Click"
+                                           Tag="{Binding Path}">
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                            <Image Source="/Assets/icons/remove.png" Width="12" Height="12" Margin="0,0,4,0"/>
+                                            <TextBlock Text="حذف" FontSize="10" Foreground="White" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                        <Button.Style>
+                                            <Style TargetType="Button">
+                                                <Setter Property="Cursor" Value="Hand"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter Property="Background" Value="#CCE74C3C"/>
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Button.Style>
+                                    </Button>
                                             
-                                    <Button Content="حذف" 
-                                            FontSize="12" 
-                                            Background="#E74C3C" 
-                                            Foreground="White"
-                                            Width="50" 
-                                            Height="25"
-                                            Click="DeleteFolder_Click"
-                                            Tag="{Binding Path}"/>
+                                    <Button Width="70" Height="30"
+                                           Background="Transparent" BorderThickness="0"
+                                           Click="ViewFolder_Click"
+                                           Tag="{Binding Path}">
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                            <Image Source="/Assets/icons/view.png" Width="12" Height="12" Margin="0,0,4,0"/>
+                                            <TextBlock Text="مشاهده" FontSize="10" Foreground="White" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                        <Button.Style>
+                                            <Style TargetType="Button">
+                                                <Setter Property="Cursor" Value="Hand"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter Property="Background" Value="#CC3498DB"/>
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Button.Style>
+                                    </Button>
                                 </StackPanel>
                             </Grid>
                         </Border>

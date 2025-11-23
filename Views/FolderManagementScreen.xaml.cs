@@ -39,7 +39,7 @@ namespace MizeKar
             UpdateStatus($"{_folders.Count} پوشه یافت شد");
         }
 
-        private void OnFoldersChanged(object sender, EventArgs e)
+        private void OnFoldersChanged(object? sender, EventArgs e)
         {
             // Use dispatcher to update UI from background thread
             Dispatcher.Invoke(() =>
@@ -53,6 +53,11 @@ namespace MizeKar
             var mainScreen = new MainScreen();
             mainScreen.Show();
             this.Close();
+        }
+
+        private void ExitButton_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
 
         private void CreateFolderButton_Click(object sender, RoutedEventArgs e)

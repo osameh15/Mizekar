@@ -2,10 +2,13 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="ایجاد پوشه جدید"
-        Width="350"
-        Height="200"
+        Width="400"
+        Height="250"
+        WindowStyle="None"
         WindowStartupLocation="CenterOwner"
-        ResizeMode="NoResize">
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True">
     
     <Grid>
         <!-- Dialog Background Image -->
@@ -15,6 +18,15 @@
         
         <Border Margin="20" Background="#FFFFFF" Opacity="0.95" CornerRadius="10" Padding="15">
             <StackPanel>
+                <!-- Header -->
+                <TextBlock Text="ایجاد پوشه جدید" 
+                          FontSize="18" 
+                          FontWeight="Bold" 
+                          Foreground="#2C3E50"
+                          HorizontalAlignment="Center"
+                          Margin="0,0,0,15"/>
+                
+                <!-- Content -->
                 <TextBlock Text="نام پوشه جدید را وارد کنید:" 
                            FontSize="16" 
                            FontWeight="SemiBold"
@@ -31,23 +43,48 @@
                          TextAlignment="Right"
                          KeyDown="FolderNameTextBox_KeyDown"/>
                 
+                <!-- Action Buttons -->
                 <StackPanel Orientation="Horizontal" 
                             HorizontalAlignment="Center" 
                             Margin="0,25,0,0">
-                    <Button Content="ایجاد" 
-                            Width="80" 
-                            Height="35"
-                            Background="#27AE60" 
-                            Foreground="White"
-                            Click="CreateButton_Click"
-                            Margin="0,0,10,0"/>
+                    <Button Width="80" Height="40"
+                           Background="Transparent" BorderThickness="0"
+                           Click="CancelButton_Click"
+                           Margin="0,0,10,0">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Image Source="/Assets/icons/close.png" Width="16" Height="16" Margin="0,0,6,0"/>
+                            <TextBlock Text="انصراف" FontSize="12" Foreground="#2C3E50" VerticalAlignment="Center"/>
+                        </StackPanel>
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Cursor" Value="Hand"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#CC95A5A6"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
                             
-                    <Button Content="انصراف" 
-                            Width="80" 
-                            Height="35"
-                            Background="#95A5A6" 
-                            Foreground="White"
-                            Click="CancelButton_Click"/>
+                    <Button Width="80" Height="40"
+                           Background="Transparent" BorderThickness="0"
+                           Click="CreateButton_Click">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Image Source="/Assets/icons/confirm.png" Width="16" Height="16" Margin="0,0,6,0"/>
+                            <TextBlock Text="تأیید" FontSize="12" Foreground="#2C3E50" VerticalAlignment="Center"/>
+                        </StackPanel>
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Cursor" Value="Hand"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#CC27AE60"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
                 </StackPanel>
             </StackPanel>
         </Border>

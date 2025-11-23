@@ -13,11 +13,11 @@ namespace MizeKar.Services
         public static FontManager Instance => _instance;
 
         private readonly Dictionary<string, FontFamily> _loadedFonts;
-        private FontFamily _primaryPersianFont;
-        private FontFamily _fallbackFont;
+        private FontFamily? _primaryPersianFont;
+        private FontFamily? _fallbackFont;
 
-        public FontFamily PrimaryPersianFont => _primaryPersianFont ?? _fallbackFont;
-        public FontFamily FallbackFont => _fallbackFont;
+        public FontFamily PrimaryPersianFont => _primaryPersianFont ?? (_fallbackFont ?? new FontFamily("Tahoma"));
+        public FontFamily FallbackFont => _fallbackFont ?? new FontFamily("Tahoma");
 
         private FontManager()
         {
@@ -128,7 +128,7 @@ namespace MizeKar.Services
                 return PrimaryPersianFont;
             }
             
-            return _fallbackFont;
+            return _fallbackFont ?? new FontFamily("Tahoma");
         }
 
         private bool ContainsPersianCharacters(string text)

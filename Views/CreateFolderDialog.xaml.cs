@@ -5,7 +5,7 @@ namespace MizeKar
 {
     public partial class CreateFolderDialog : Window
     {
-        public string FolderName { get; private set; }
+        public string FolderName { get; private set; } = string.Empty;
 
         public CreateFolderDialog()
         {

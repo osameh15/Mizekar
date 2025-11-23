@@ -9,7 +9,7 @@ namespace MizeKar.Services
     public class FolderService
     {
         private readonly string _dataFolderPath;
-        private FileSystemWatcher _fileSystemWatcher;
+        private FileSystemWatcher? _fileSystemWatcher;
 
         public FolderService()
         {
@@ -18,7 +18,7 @@ namespace MizeKar.Services
             InitializeFileSystemWatcher();
         }
 
-        public event EventHandler FoldersChanged;
+        public event EventHandler? FoldersChanged;
 
         private void EnsureDataFolderExists()
         {

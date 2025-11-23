@@ -21,7 +21,7 @@ namespace MizeKar
             _timer.Start();
         }
 
-        private void Timer_Tick(object sender, EventArgs e)
+        private void Timer_Tick(object? sender, EventArgs e)
         {
             _timer.Stop();
             
