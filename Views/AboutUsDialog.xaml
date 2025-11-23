@@ -38,13 +38,12 @@
                               HorizontalAlignment="Center"/>
                     
                     <!-- Close Button -->
-                    <Button Grid.Column="1" Width="100" Height="35" 
+                    <Button Grid.Column="1" Width="auto" Height="auto" 
                            Background="Transparent" BorderThickness="0"
                            Click="CloseButton_Click"
                             Cursor="Hand">
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                            <TextBlock Text="بستن" FontSize="14" Foreground="#2C3E50" VerticalAlignment="Center"/>
-                            <Image Source="/Assets/icons/close.png" Width="24" Height="24" Margin="8,0,0,0"/>
+                            <Image Source="/Assets/icons/close.png" Width="24" Height="24" Margin="0,0,0,0"/>
                         </StackPanel>
                     </Button>
                 </Grid>
