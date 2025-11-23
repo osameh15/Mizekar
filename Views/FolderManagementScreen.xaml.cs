@@ -36,7 +36,7 @@ namespace MizeKar
             }
             
             FoldersItemsControl.ItemsSource = _folders;
-            UpdateStatus($"پوشه یافت شد {_folders.Count}");
+            UpdateStatus($"تعداد {_folders.Count} پوشه یافت شد");
         }
 
         private void OnFoldersChanged(object? sender, EventArgs e)
