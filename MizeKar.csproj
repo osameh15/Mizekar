@@ -29,6 +29,9 @@
     <Resource Include="Assets\images\splash.png" />
     <Resource Include="Assets\images\dialog-background.jpg" />
     
+    <!-- Include application logo -->
+    <Resource Include="Assets\logo.png" />
+    
     <!-- Include icon images as WPF resources and copy to output directory -->
     <Resource Include="Assets\icons\about-us.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
