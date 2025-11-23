@@ -23,6 +23,11 @@
     <EmbeddedResource Include="Assets\fonts\Shabnam\*.eot" />
     <EmbeddedResource Include="Assets\fonts\Shabnam\*.woff" />
     <EmbeddedResource Include="Assets\fonts\Shabnam\*.woff2" />
+    
+    <!-- Include background images as WPF resources -->
+    <Resource Include="Assets\images\background.png" />
+    <Resource Include="Assets\images\splash.png" />
+    <Resource Include="Assets\images\dialog-background.jpg" />
   </ItemGroup>
 
 </Project>
