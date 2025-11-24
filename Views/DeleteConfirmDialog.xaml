@@ -56,9 +56,8 @@
                 <StackPanel Orientation="Horizontal" 
                             HorizontalAlignment="Center">
                     <Button Width="100" Height="45"
-                           Background="Transparent" BorderThickness="0"
+                           Style="{StaticResource NoHoverButtonStyle}"
                            Click="CancelButton_Click"
-                           Cursor="Hand"
                            Margin="0,0,10,0">
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                             <TextBlock Text="انصراف" FontSize="14" Foreground="#2C3E50" VerticalAlignment="Center"/>
@@ -67,9 +66,8 @@
                     </Button>
                             
                     <Button Width="100" Height="45"
-                           Background="Transparent" BorderThickness="0"
-                           Click="DeleteButton_Click"
-                           Cursor="Hand">
+                           Style="{StaticResource NoHoverButtonStyle}"
+                           Click="DeleteButton_Click">
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                             <TextBlock Text="حذف" FontSize="14" Foreground="#E74C3C" VerticalAlignment="Center"/>
                             <Image Source="/Assets/icons/remove.png" Width="20" Height="20" Margin="8,0,0,0"/>

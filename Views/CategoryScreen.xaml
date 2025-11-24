@@ -35,9 +35,8 @@
                 <!-- Left Side: Exit Button -->
                 <Button Grid.Column="0"
                     Width="130" Height="45"
-                    Background="Transparent" BorderThickness="0"
-                    Click="ExitButton_Click"
-                    Cursor="Hand">
+                    Style="{StaticResource NoHoverButtonStyle}"
+                    Click="ExitButton_Click">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <TextBlock Text="خروج" FontSize="14" Foreground="White" VerticalAlignment="Center" Margin="0,0,8,0"/>
                         <Image Source="/Assets/icons/exit.png" Width="24" Height="24"/>
@@ -56,10 +55,9 @@
                 <!-- Right Side: Back Button -->
                 <Button Grid.Column="2"
                     Width="130" Height="45"
-                    Background="Transparent" BorderThickness="0"
+                    Style="{StaticResource NoHoverButtonStyle}"
                     Margin="0,0,10,0"
-                    Click="BackButton_Click"
-                    Cursor="Hand">
+                    Click="BackButton_Click">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <TextBlock Text="صفحه اصلی" FontSize="14" Foreground="White" VerticalAlignment="Center" Margin="0,0,8,0"/>
                         <Image Source="/Assets/icons/home.png" Width="24" Height="24"/>
@@ -95,8 +93,7 @@
                                 <DropShadowEffect ShadowDepth="4" Opacity="0.3" BlurRadius="10"/>
                             </Border.Effect>
                             
-                            <Button Background="Transparent" 
-                                    BorderThickness="0"
+                            <Button Style="{StaticResource NoHoverButtonStyle}"
                                     Click="CategoryButton_Click"
                                     Tag="{Binding Path}">
                                 <Grid>

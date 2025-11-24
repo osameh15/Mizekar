@@ -38,10 +38,9 @@
                 <!-- Left Side: Exit Button -->
                 <Button Grid.Column="0"
                         Width="120" Height="45"
-                        Background="Transparent" BorderThickness="0"
+                        Style="{StaticResource NoHoverButtonStyle}"
                         Margin="0,0,10,0"
-                        Click="ExitButton_Click"
-                        Cursor="Hand">
+                        Click="ExitButton_Click">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <TextBlock Text="خروج" FontSize="14" Foreground="White" VerticalAlignment="Center" Margin="0,0,8,0"/>
                         <Image Source="/Assets/icons/exit.png" Width="24" Height="24"/>
@@ -51,10 +50,9 @@
                 <!-- Left Side: Refresh Button -->
                 <Button Grid.Column="1"
                         Width="120" Height="45"
-                        Background="Transparent" BorderThickness="0"
+                        Style="{StaticResource NoHoverButtonStyle}"
                         Margin="0,0,10,0"
-                        Click="RefreshButton_Click"
-                        Cursor="Hand">
+                        Click="RefreshButton_Click">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <TextBlock Text="بارگذاری مجدد" FontSize="14" Foreground="White" VerticalAlignment="Center" Margin="0,0,8,0"/>
                         <Image Source="/Assets/icons/refresh.png" Width="24" Height="24"/>
@@ -74,10 +72,9 @@
                 <!-- Right Side: Back to Categories Button -->
                 <Button Grid.Column="3"
                     Width="120" Height="45"
-                    Background="Transparent" BorderThickness="0"
+                    Style="{StaticResource NoHoverButtonStyle}"
                     Margin="0,0,10,0"
-                    Click="BackToCategories_Click"
-                    Cursor="Hand">
+                    Click="BackToCategories_Click">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <TextBlock Text="دسته‌بندی‌ها" FontSize="14" Foreground="White" VerticalAlignment="Center" Margin="0,0,8,0"/>
                         <Image Source="/Assets/icons/categories.png" Width="24" Height="24"/>
@@ -87,10 +84,9 @@
                 <!-- Right Side: Home Button -->
                 <Button Grid.Column="4"
                         Width="120" Height="45"
-                        Background="Transparent" BorderThickness="0"
+                        Style="{StaticResource NoHoverButtonStyle}"
                         Margin="0,0,10,0"
-                        Click="BackButton_Click"
-                        Cursor="Hand">
+                        Click="BackButton_Click">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <TextBlock Text="خانه" FontSize="14" Foreground="White" VerticalAlignment="Center" Margin="0,0,8,0"/>
                         <Image Source="/Assets/icons/home.png" Width="24" Height="24"/>
@@ -100,10 +96,8 @@
                 <!-- Right Side: Add Folder Button -->
                 <Button Grid.Column="5"
                         Width="120" Height="45"
-                        
-                        Background="Transparent" BorderThickness="0"
-                        Click="CreateFolderButton_Click"
-                        Cursor="Hand">
+                        Style="{StaticResource NoHoverButtonStyle}"
+                        Click="CreateFolderButton_Click">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <TextBlock Text="ایجاد پوشه" FontSize="14" Foreground="White" VerticalAlignment="Center" Margin="0,0,8,0"/>
                         <Image Source="/Assets/icons/add-folder.png" Width="24" Height="24"/>
@@ -158,11 +152,10 @@
                                             Orientation="Horizontal" 
                                             HorizontalAlignment="Center">
                                     <Button Width="80" Height="35"
-                                           Background="Transparent" BorderThickness="0"
+                                           Style="{StaticResource NoHoverButtonStyle}"
                                            Margin="0,0,5,0"
                                            Click="DeleteFolder_Click"
-                                           Tag="{Binding Path}"
-                                           Cursor="Hand">
+                                           Tag="{Binding Path}">
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                                             <TextBlock Text="حذف" FontSize="12" Foreground="White" VerticalAlignment="Center" Margin="0,0,6,0"/>
                                             <Image Source="/Assets/icons/remove.png" Width="18" Height="18"/>
@@ -170,10 +163,9 @@
                                     </Button>
                                             
                                     <Button Width="80" Height="35"
-                                           Background="Transparent" BorderThickness="0"
+                                           Style="{StaticResource NoHoverButtonStyle}"
                                            Click="ViewFolder_Click"
-                                           Tag="{Binding Path}"
-                                            Cursor="Hand">
+                                           Tag="{Binding Path}">
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                                             <TextBlock Text="مشاهده" FontSize="12" Foreground="White" VerticalAlignment="Center" Margin="0,0,6,0"/>
                                             <Image Source="/Assets/icons/view.png" Width="18" Height="18"/>

@@ -39,9 +39,8 @@
                     
                     <!-- Close Button -->
                     <Button Grid.Column="1" Width="auto" Height="auto" 
-                           Background="Transparent" BorderThickness="0"
-                           Click="CloseButton_Click"
-                            Cursor="Hand">
+                           Style="{StaticResource NoHoverButtonStyle}"
+                           Click="CloseButton_Click">
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                             <Image Source="/Assets/icons/close.png" Width="24" Height="24" Margin="0,0,0,0"/>
                         </StackPanel>

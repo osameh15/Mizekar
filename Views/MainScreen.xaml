@@ -6,6 +6,7 @@
         ResizeMode="NoResize"
         Title="Mizekar - Main Screen"
         Icon="/Assets/logo.png">
+
     
     <Grid>
         <!-- Main Background Image -->
@@ -56,10 +57,9 @@
                     Width="300">
             
             <Button Width="200" Height="64"
-                   Background="Transparent" BorderThickness="0"
+                   Style="{StaticResource NoHoverButtonStyle}"
                    Click="LoginButton_Click"
                    Margin="0,0,0,20"
-                   Cursor="Hand"
                    HorizontalContentAlignment="Right">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -72,10 +72,9 @@
             </Button>
             
             <Button Width="200" Height="64"
-                   Background="Transparent" BorderThickness="0"
+                   Style="{StaticResource NoHoverButtonStyle}"
                    Click="AboutUsButton_Click"
                    Margin="0,0,0,20"
-                   Cursor="Hand"
                    HorizontalContentAlignment="Right">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -88,10 +87,9 @@
             </Button>
             
             <Button Width="200" Height="64"
-                   Background="Transparent" BorderThickness="0"
+                   Style="{StaticResource NoHoverButtonStyle}"
                    Click="ContactUsButton_Click"
                    Margin="0,0,0,20"
-                   Cursor="Hand"
                    HorizontalContentAlignment="Right">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -105,10 +103,9 @@
                     
             <!-- Exit Button -->
             <Button Width="200" Height="64"
-                   Background="Transparent" BorderThickness="0"
+                   Style="{StaticResource NoHoverButtonStyle}"
                    Click="ExitButton_Click"
                    Margin="0,30,0,0"
-                   Cursor="Hand"
                    HorizontalContentAlignment="Right">
                 <Grid>
                     <Grid.ColumnDefinitions>

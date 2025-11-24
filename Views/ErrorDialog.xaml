@@ -45,9 +45,8 @@
                 
                 <!-- Action Button -->
                 <Button Width="100" Height="45"
-                       Background="Transparent" BorderThickness="0"
+                       Style="{StaticResource NoHoverButtonStyle}"
                        Click="OkButton_Click"
-                       Cursor="Hand"
                        HorizontalAlignment="Center">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <TextBlock Text="تأیید" FontSize="14" Foreground="#2C3E50" VerticalAlignment="Center"/>
