@@ -147,7 +147,8 @@
                                            Background="Transparent" BorderThickness="0"
                                            Margin="0,0,5,0"
                                            Click="DeleteFolder_Click"
-                                           Tag="{Binding Path}">
+                                           Tag="{Binding Path}"
+                                           Cursor="Hand">
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                                             <TextBlock Text="حذف" FontSize="12" Foreground="White" VerticalAlignment="Center" Margin="0,0,6,0"/>
                                             <Image Source="/Assets/icons/remove.png" Width="18" Height="18"/>
@@ -157,7 +158,8 @@
                                     <Button Width="80" Height="35"
                                            Background="Transparent" BorderThickness="0"
                                            Click="ViewFolder_Click"
-                                           Tag="{Binding Path}">
+                                           Tag="{Binding Path}"
+                                            Cursor="Hand">
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                                             <TextBlock Text="مشاهده" FontSize="12" Foreground="White" VerticalAlignment="Center" Margin="0,0,6,0"/>
                                             <Image Source="/Assets/icons/view.png" Width="18" Height="18"/>
