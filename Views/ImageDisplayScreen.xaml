@@ -86,7 +86,7 @@
                         Style="{StaticResource NoHoverButtonStyle}"
                         Click="UploadImageButton_Click">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                        <TextBlock Text="آپلود تصویر" FontSize="14" Foreground="White" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                        <TextBlock Text="بارگذاری تصویر" FontSize="14" Foreground="White" VerticalAlignment="Center" Margin="0,0,8,0"/>
                         <Image Source="/Assets/icons/add-folder.png" Width="24" Height="24"/>
                     </StackPanel>
                 </Button>
