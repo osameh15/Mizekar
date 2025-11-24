@@ -20,27 +20,81 @@ A modern, fullscreen Windows desktop application for managing folder structures 
 
 ### Splash Screen
 
+![Splash Screen](./docs/Screenshots/splash-screen.png)
 - Displays for 2 seconds with app branding
 - Automatic transition to main screen
 
 ### Main Screen
 
+![Main Screen](./docs/Screenshots/main.png)
 - Fullscreen navigation with Persian/English options
 - Login, About Us, Contact Us, and Exit buttons
 
 ### Category Screen
 
+![Category Screen](./docs/Screenshots/category.png)
 - **3x3 Grid Layout** - Beautiful presentation of 9 main categories
 - **Category Selection** - Click any category to manage folders within it
 - **Structured Organization** - Prevents folder creation in root Data directory
 
 ### Folder Management
 
+![Folder Management](./docs/Screenshots/folders.png)
 - **4-Row Layout** - Optimized display with exactly 4 visible rows
 - **Right-to-Left Alignment** - Natural Persian reading direction
 - **Category-Specific** - Shows only folders from selected category
 - **Real-time Updates** - File system watcher monitors category changes
 - **Manual Refresh** - Refresh button for immediate folder list updates
+
+### Empty State
+
+![Empty Folders](./docs/Screenshots/empty-folders.png)
+- **User-Friendly Message** - Clear "پوشه‌ای وجود ندارد. یک پوشه ایجاد کنید" when no folders exist
+- **Guidance** - Prompts users to create their first folder
+
+### Image Display System
+
+![Chart Display](./docs/Screenshots/charts.png)
+- **Chart Category** - Special handling for chart images instead of folders
+- **Image Upload** - Upload and replace chart images
+- **Fullscreen Viewer** - Click images to view in fullscreen mode
+
+### Dialog Examples
+
+#### Create Folder Dialog
+![Create Folder](./docs/Screenshots/add-folder.png)
+- **Persian Input Validation** - Only allows valid Persian characters
+- **Visual Feedback** - Real-time validation with color indicators
+
+#### Delete Confirmation
+![Delete Folder](./docs/Screenshots/remove-folder.png)
+- **Safety Confirmation** - Prevents accidental folder deletion
+- **Clear Information** - Shows folder name being deleted
+
+#### About Us Dialog
+![About Us](./docs/Screenshots/about-us.png)
+- **Application Information** - Details about MizeKar features
+- **Professional Design** - Consistent Persian-styled interface
+
+#### Contact Us Dialog
+![Contact Us](./docs/Screenshots/contact-us.png)
+- **Support Information** - Contact details and support channels
+- **Modern Interface** - Clean, readable design
+
+#### Error Handling
+![Error Dialog](./docs/Screenshots/error.png)
+- **User-Friendly Errors** - Clear error messages in Persian
+- **Professional Design** - Consistent with application theme
+
+#### Image Upload
+![Upload Chart](./docs/Screenshots/upload-chart.png)
+- **File Selection** - Standard Windows file dialog for image selection
+- **Status Updates** - Real-time feedback on upload progress
+
+#### Input Validation
+![Name Validation](./docs/Screenshots/validate-name.png)
+- **Character Validation** - Blocks invalid characters in real-time
+- **Visual Indicators** - Clear feedback for valid/invalid input
 - **Empty State Messages** - Clear message when no folders exist in a category
 
 ### Image Display System
@@ -92,6 +146,14 @@ MizeKar/
 │       ├── remove.png, setting.png, stat.png, view.png
 │       ├── refresh.png, categories.png
 │   └── logo.ico           # Application icon for Windows
+├── docs/                  # Documentation and resources
+│   ├── BUILD_INSTRUCTIONS.md  # Detailed build instructions
+│   └── Screenshots/       # Application screenshots
+│       ├── splash-screen.png, main.png, category.png
+│       ├── folders.png, empty-folders.png, charts.png
+│       ├── add-folder.png, remove-folder.png, upload-chart.png
+│       ├── about-us.png, contact-us.png, error.png
+│       └── validate-name.png
 ├── App.xaml               # Application entry point
 ├── MizeKar.csproj         # Project configuration
 └── MizeKar.sln            # Solution file
@@ -275,6 +337,7 @@ For support and questions:
 
 - [Project Documentation](./docs/)
 - [Build Instructions](./docs/BUILD_INSTRUCTIONS.md)
+- [Application Screenshots](./docs/Screenshots/)
 
 ---
 
