@@ -1,0 +1,60 @@
+<Window x:Class="MizeKar.ErrorDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="خطا"
+        Width="450"
+        Height="280"
+        WindowStyle="None"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True"
+        Icon="/Assets/logo.png">
+    
+    <Grid>
+        <!-- Dialog Background Image -->
+        <Grid.Background>
+            <ImageBrush ImageSource="pack://application:,,,/Assets/images/dialog-background.jpg" Stretch="Fill"/>
+        </Grid.Background>
+        
+        <Border Margin="20" Background="#FFFFFF" Opacity="0.95" CornerRadius="10" Padding="15">
+            <StackPanel>
+                <!-- Header -->
+                <TextBlock Text="خطا" 
+                          FontSize="18" 
+                          FontWeight="Bold" 
+                          Foreground="#E74C3C"
+                          HorizontalAlignment="Center"
+                          Margin="0,0,0,15"/>
+                
+                <!-- Error Icon -->
+                <Image Source="/Assets/icons/close.png" 
+                       Width="48" Height="48" 
+                       HorizontalAlignment="Center"
+                       Margin="0,0,0,20"/>
+                
+                <!-- Error Message -->
+                <TextBlock x:Name="ErrorMessageTextBlock"
+                           Text="خطایی رخ داده است" 
+                           FontSize="16" 
+                           FontWeight="SemiBold"
+                           Foreground="#2C3E50"
+                           TextWrapping="Wrap"
+                           TextAlignment="Center"
+                           Margin="0,0,0,25"/>
+                
+                <!-- Action Button -->
+                <Button Width="100" Height="45"
+                       Background="Transparent" BorderThickness="0"
+                       Click="OkButton_Click"
+                       Cursor="Hand"
+                       HorizontalAlignment="Center">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <TextBlock Text="تأیید" FontSize="14" Foreground="#2C3E50" VerticalAlignment="Center"/>
+                        <Image Source="/Assets/icons/confirm.png" Width="20" Height="20" Margin="8,0,0,0"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

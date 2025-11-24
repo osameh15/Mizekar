@@ -1,0 +1,82 @@
+<Window x:Class="MizeKar.DeleteConfirmDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="تأیید حذف پوشه"
+        Width="480"
+        Height="300"
+        WindowStyle="None"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True"
+        Icon="/Assets/logo.png">
+    
+    <Grid>
+        <!-- Dialog Background Image -->
+        <Grid.Background>
+            <ImageBrush ImageSource="pack://application:,,,/Assets/images/dialog-background.jpg" Stretch="Fill"/>
+        </Grid.Background>
+        
+        <Border Margin="20" Background="#FFFFFF" Opacity="0.95" CornerRadius="10" Padding="15">
+            <StackPanel>
+                <!-- Header -->
+                <TextBlock Text="تأیید حذف پوشه" 
+                          FontSize="18" 
+                          FontWeight="Bold" 
+                          Foreground="#E74C3C"
+                          HorizontalAlignment="Center"
+                          Margin="0,0,0,15"/>
+                
+                <!-- Warning Icon -->
+                <Image Source="/Assets/icons/remove.png" 
+                       Width="48" Height="48" 
+                       HorizontalAlignment="Center"
+                       Margin="0,0,0,10"/>
+                
+                <!-- Content -->
+                <TextBlock x:Name="MessageTextBlock"
+                           Text="آیا از حذف این پوشه اطمینان دارید؟" 
+                           FontSize="16" 
+                           FontWeight="SemiBold"
+                           Foreground="#2C3E50"
+                           TextWrapping="Wrap"
+                           TextAlignment="Center"
+                           Margin="0,0,0,20"/>
+                
+                <!-- Warning Text -->
+                <TextBlock Text="تمام محتویات این پوشه نیز حذف خواهند شد و این عمل قابل بازگشت نیست" 
+                           FontSize="12" 
+                           Foreground="#E74C3C"
+                           FontWeight="SemiBold"
+                           TextWrapping="Wrap"
+                           TextAlignment="Center"
+                           Margin="0,0,0,20"/>
+                
+                <!-- Action Buttons -->
+                <StackPanel Orientation="Horizontal" 
+                            HorizontalAlignment="Center">
+                    <Button Width="100" Height="45"
+                           Background="Transparent" BorderThickness="0"
+                           Click="CancelButton_Click"
+                           Cursor="Hand"
+                           Margin="0,0,10,0">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <TextBlock Text="انصراف" FontSize="14" Foreground="#2C3E50" VerticalAlignment="Center"/>
+                            <Image Source="/Assets/icons/close.png" Width="20" Height="20" Margin="8,0,0,0"/>
+                        </StackPanel>
+                    </Button>
+                            
+                    <Button Width="100" Height="45"
+                           Background="Transparent" BorderThickness="0"
+                           Click="DeleteButton_Click"
+                           Cursor="Hand">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <TextBlock Text="حذف" FontSize="14" Foreground="#E74C3C" VerticalAlignment="Center"/>
+                            <Image Source="/Assets/icons/remove.png" Width="20" Height="20" Margin="8,0,0,0"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
