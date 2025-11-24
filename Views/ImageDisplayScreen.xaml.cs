@@ -35,7 +35,7 @@ namespace MizeKar
                     bitmap.CacheOption = BitmapCacheOption.OnLoad;
                     bitmap.EndInit();
                     DisplayImage.Source = bitmap;
-                    UpdateStatus("تصویر بارگذاری شد");
+                    UpdateStatus("چارت سازمانی بارگذاری شد");
                 }
                 else
                 {
@@ -59,7 +59,7 @@ namespace MizeKar
             }
             catch (Exception ex)
             {
-                UpdateStatus("خطا در بارگذاری تصویر");
+                UpdateStatus("خطا در بارگذاری چارت سازمانی");
                 System.Diagnostics.Debug.WriteLine($"Error loading image: {ex.Message}");
             }
         }
@@ -69,7 +69,7 @@ namespace MizeKar
             var openFileDialog = new OpenFileDialog
             {
                 Filter = "Image Files (*.png;*.jpg;*.jpeg;*.bmp)|*.png;*.jpg;*.jpeg;*.bmp",
-                Title = "انتخاب تصویر"
+                Title = "انتخاب چارت سازمانی"
             };
 
             if (openFileDialog.ShowDialog() == true)
@@ -87,11 +87,11 @@ namespace MizeKar
                     
                     // Reload the image
                     LoadImage();
-                    UpdateStatus("تصویر با موفقیت آپلود شد");
+                    UpdateStatus("چارت سازمانی با موفقیت آپلود شد");
                 }
                 catch (Exception ex)
                 {
-                    var errorDialog = new ErrorDialog("خطا در آپلود تصویر. لطفاً دوباره تلاش کنید");
+                    var errorDialog = new ErrorDialog("خطا در آپلود چارت سازمانی. لطفاً دوباره تلاش کنید");
                     errorDialog.Owner = this;
                     errorDialog.ShowDialog();
                     System.Diagnostics.Debug.WriteLine($"Error uploading image: {ex.Message}");

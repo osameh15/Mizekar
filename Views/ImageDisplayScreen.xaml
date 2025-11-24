@@ -111,9 +111,6 @@
         
         <!-- Status Bar -->
         <Border Grid.Row="2" 
-                Background="#34495E"
-                OpacityMask="Aqua"
-                Opacity="0.8"
                 Padding="10">
             <TextBlock x:Name="StatusTextBlock"
                        Text="آماده" 
