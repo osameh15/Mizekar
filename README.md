@@ -163,6 +163,7 @@ dotnet publish -c Release -r win-x64 --self-contained
 
 - **Data Folder**: Application creates a "Data" folder in the application directory
 - **Category-Based**: Folders are created within selected categories only
+- **Automatic Setup**: 9 main categories are automatically created on first run
 - **Persian Support**: Full support for Persian folder names using UTF-8 encoding
 - **Input Validation**: Only Persian characters, numbers, hyphen (-), and underscore (_) allowed
 - **Real-time Updates**: UI updates immediately when folders are added or deleted
