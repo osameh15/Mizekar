@@ -67,6 +67,16 @@ namespace MizeKar
             }
             
             FoldersItemsControl.ItemsSource = _folders;
+            
+            // Show/hide empty state message
+            if (_folders.Count == 0)
+            {
+                EmptyStateTextBlock.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                EmptyStateTextBlock.Visibility = Visibility.Collapsed;
+            }
         }
 
         private void OnFoldersChanged(object? sender, EventArgs e)
