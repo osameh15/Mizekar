@@ -11,6 +11,7 @@
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <FileVersion>1.0.0.0</FileVersion>
     <RootNamespace>MizeKar</RootNamespace>
+    <ApplicationIcon>Assets\logo.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -38,53 +39,61 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     
-    <!-- Include application logo -->
-    <Resource Include="Assets\logo.png" />
-    <Resource Include="Assets\logo-white.png" />
+    <!-- Include application logo as Content and copy to output directory -->
+    <Content Include="Assets\logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\logo-white.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\logo.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     
-    <!-- Include icon images as WPF resources and copy to output directory -->
-    <Resource Include="Assets\icons\about-us.png">
+    <!-- Include icon images as Content and copy to output directory -->
+    <Content Include="Assets\icons\about-us.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\icons\add-folder.png">
+    </Content>
+    <Content Include="Assets\icons\add-folder.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\icons\close.png">
+    </Content>
+    <Content Include="Assets\icons\close.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\icons\contact-us.png">
+    </Content>
+    <Content Include="Assets\icons\contact-us.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\icons\enter.png">
+    </Content>
+    <Content Include="Assets\icons\enter.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\icons\exit.png">
+    </Content>
+    <Content Include="Assets\icons\exit.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\icons\home.png">
+    </Content>
+    <Content Include="Assets\icons\home.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\icons\remove.png">
+    </Content>
+    <Content Include="Assets\icons\remove.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\icons\view.png">
+    </Content>
+    <Content Include="Assets\icons\view.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\icons\confirm.png">
+    </Content>
+    <Content Include="Assets\icons\confirm.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\icons\setting.png">
+    </Content>
+    <Content Include="Assets\icons\setting.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\icons\stat.png">
+    </Content>
+    <Content Include="Assets\icons\stat.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-	  <Resource Include="Assets\icons\refresh.png">
-		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	  </Resource>
-	  <Resource Include="Assets\icons\categories.png">
-		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	  </Resource>
-  </ItemGroup>
+    </Content>
+    <Content Include="Assets\icons\refresh.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\icons\categories.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  
+</ItemGroup>
 
 </Project>
