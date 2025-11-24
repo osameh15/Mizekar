@@ -1,6 +1,6 @@
 # MizeKar - Fullscreen Windows Folder Manager
 
-A modern, fullscreen Windows desktop application for managing folder structures with Persian language support and category-based organization.
+A modern, fullscreen Windows desktop application for managing folder structures with Persian language support, category-based organization, and image display capabilities.
 
 ## 🚀 Features
 
@@ -12,6 +12,9 @@ A modern, fullscreen Windows desktop application for managing folder structures 
 - **Custom Dialogs** - Professional Persian-styled dialogs for all user interactions
 - **Intuitive Interface** - Clean, modern UI with smooth navigation
 - **File System Integration** - Direct integration with Windows Explorer
+- **Image Display System** - Special category for displaying and uploading chart images
+- **Empty State Handling** - User-friendly messages when categories have no folders
+- **Custom Application Icon** - Professional icon for Windows integration
 
 ## 📸 Screenshots
 
@@ -38,6 +41,14 @@ A modern, fullscreen Windows desktop application for managing folder structures 
 - **Category-Specific** - Shows only folders from selected category
 - **Real-time Updates** - File system watcher monitors category changes
 - **Manual Refresh** - Refresh button for immediate folder list updates
+- **Empty State Messages** - Clear message when no folders exist in a category
+
+### Image Display System
+
+- **Chart Category** - Special handling for "چارت عوامل اجرایی، آموزشی و پرورشی" category
+- **Image Upload** - Upload and replace chart images with automatic display
+- **Fullscreen Viewer** - Click images to view in fullscreen mode
+- **Default Chart** - Pre-loaded default chart image for immediate use
 
 ## 🛠️ Technology Stack
 
@@ -59,7 +70,9 @@ MizeKar/
 │   ├── ContactUsDialog.xaml # Contact information dialog
 │   ├── CreateFolderDialog.xaml # Folder creation dialog
 │   ├── DeleteConfirmDialog.xaml # Folder deletion confirmation
-│   └── ErrorDialog.xaml   # Error message display
+│   ├── ErrorDialog.xaml   # Error message display
+│   ├── ImageDisplayScreen.xaml # Image display for chart category
+│   └── ImageFullscreenWindow.xaml # Fullscreen image viewer
 ├── Models/                # Data models
 │   └── FolderInfo.cs      # Folder data model
 ├── Services/              # Business logic
@@ -71,11 +84,14 @@ MizeKar/
 │   ├── images/            # Background images
 │   │   ├── background.png # Main application background
 │   │   ├── splash.png     # Splash screen background
-│   │   └── dialog-background.jpg # Dialog window background
+│   │   ├── dialog-background.jpg # Dialog window background
+│   │   └── chart.png      # Default chart image for display
 │   └── icons/             # Application icons
 │       ├── about-us.png, add-folder.png, close.png, confirm.png
 │       ├── contact-us.png, enter.png, exit.png, home.png
 │       ├── remove.png, setting.png, stat.png, view.png
+│       ├── refresh.png, categories.png
+│   └── logo.ico           # Application icon for Windows
 ├── App.xaml               # Application entry point
 ├── MizeKar.csproj         # Project configuration
 └── MizeKar.sln            # Solution file
@@ -150,11 +166,20 @@ dotnet publish -c Release -r win-x64 --self-contained
 - **Persian Support**: Full support for Persian folder names using UTF-8 encoding
 - **Input Validation**: Only Persian characters, numbers, hyphen (-), and underscore (_) allowed
 - **Real-time Updates**: UI updates immediately when folders are added or deleted
+- **Empty State Messages**: Clear "پوشه‌ای وجود ندارد. یک پوشه ایجاد کنید" message when no folders exist
 - **Folder Operations**:
   - Create new folders with validated Persian names
   - Delete folders with custom confirmation dialog
   - Open folders in Windows Explorer
   - Manual refresh with refresh button
+
+### Image Display System
+
+- **Chart Category**: "چارت عوامل اجرایی، آموزشی و پرورشی" category displays images instead of folders
+- **Image Upload**: Click "آپلود تصویر" to upload and replace chart images
+- **Fullscreen Viewer**: Click displayed image to view in fullscreen mode
+- **Default Chart**: Pre-loaded default chart.png for immediate display
+- **Status Updates**: Real-time status messages for image operations
 
 ### Keyboard Shortcuts
 
@@ -184,6 +209,9 @@ Test the following features:
 8. **Manual refresh** - use refresh button to reload folder list
 9. **Splash screen timing** and transitions
 10. **Right-to-left alignment** in folder management screen
+11. **Empty state messages** - verify message appears when categories have no folders
+12. **Image display system** - test chart category image upload and fullscreen viewing
+13. **Application icon** - verify custom icon appears in Windows taskbar and file explorer
 
 ## 🐛 Troubleshooting
 
@@ -193,6 +221,8 @@ Test the following features:
 - **Clean build**: Try `dotnet clean` then `dotnet build`
 - **Input issues**: Only Persian characters, numbers, - and _ are allowed for folder names
 - **Animation stuck**: Rapid typing may cause visual feedback to remain - fixed in latest version
+- **Image loading**: If chart image doesn't load, rebuild project to ensure assets are copied
+- **Icon not showing**: Verify `logo.ico` is included in Assets directory and project file
 
 ## 📄 License
 
@@ -215,6 +245,14 @@ For support and questions:
 
 ## 🔄 Recent Updates
 
+### Version 3.0 - Image Display & Enhanced UX
+
+- **Image Display System**: Special chart category for image upload and display
+- **Empty State Handling**: User-friendly messages for categories with no folders
+- **Custom Application Icon**: Professional icon for Windows integration
+- **Fullscreen Image Viewer**: Click images to view in fullscreen mode
+- **Asset Management**: All images and icons properly copied to output directory
+
 ### Version 2.0 - Category System & Enhanced UI
 
 - **Category-Based Organization**: 9 main categories in 3x3 grid layout
@@ -231,6 +269,7 @@ For support and questions:
 - **Animation System**: Smooth visual feedback for user actions
 - **Error Handling**: Comprehensive error management with custom dialogs
 - **Input Security**: Protected against invalid character input
+- **Asset Deployment**: Automatic copying of all assets to output directory
 
 ## 🗂️ Related Projects
 
