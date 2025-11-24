@@ -402,8 +402,6 @@ ehthumbs.db
 app.ico
 
 # Crush and OpenSpec files
-CRUSH.md
-AGENTS.md
 openspec/
 crush/
 agents/

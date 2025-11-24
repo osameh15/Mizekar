@@ -5,12 +5,13 @@ A modern, fullscreen Windows desktop application for managing folder structures 
 ## 🚀 Features
 
 - **Fullscreen Experience** - True fullscreen window with no title bars or borders
+- **Smooth Page Navigation** - Flicker-free navigation using WPF Frame-based architecture
 - **Persian Language Support** - Full UTF-8 support for Persian folder names and UI elements with Shabnam font
 - **Category-Based Organization** - 9 main categories in 3x3 grid layout for structured folder management
 - **Dynamic Folder Management** - Real-time updates when folders are added or deleted
 - **Input Validation** - Persian-only input with visual feedback for invalid characters
 - **Custom Dialogs** - Professional Persian-styled dialogs for all user interactions
-- **Intuitive Interface** - Clean, modern UI with smooth navigation
+- **Intuitive Interface** - Clean, modern UI with instant page transitions
 - **File System Integration** - Direct integration with Windows Explorer
 - **Image Display System** - Special category for displaying and uploading chart images
 - **Empty State Handling** - User-friendly messages when categories have no folders
@@ -53,17 +54,18 @@ A modern, fullscreen Windows desktop application for managing folder structures 
 
 ```
 MizeKar/
-├── Views/                 # XAML windows and dialogs
-│   ├── SplashScreen.xaml  # 2-second splash screen
-│   ├── MainScreen.xaml    # Main navigation screen
-│   ├── CategoryScreen.xaml # Category selection screen (3x3 grid)
-│   ├── FolderManagementScreen.xaml  # Folder management interface
+├── Pages/                 # Navigation pages (Frame-based)
+│   ├── SplashPage.xaml    # 5-second splash page
+│   ├── MainPage.xaml      # Main navigation page
+│   ├── CategoryPage.xaml  # Category selection page (3x3 grid)
+│   ├── FolderManagementPage.xaml  # Folder management page
+│   └── ImageDisplayPage.xaml # Image display for chart category
+├── Views/                 # Dialogs and windows
 │   ├── AboutUsDialog.xaml # About information dialog
 │   ├── ContactUsDialog.xaml # Contact information dialog
 │   ├── CreateFolderDialog.xaml # Folder creation dialog
 │   ├── DeleteConfirmDialog.xaml # Folder deletion confirmation
 │   ├── ErrorDialog.xaml   # Error message display
-│   ├── ImageDisplayScreen.xaml # Image display for chart category
 │   └── ImageFullscreenWindow.xaml # Fullscreen image viewer
 ├── Models/                # Data models
 │   └── FolderInfo.cs      # Folder data model
@@ -75,7 +77,7 @@ MizeKar/
 │   │   └── Shabnam/       # Shabnam Persian font family
 │   ├── images/            # Background images
 │   │   ├── background.png # Main application background
-│   │   ├── splash.png     # Splash screen background
+│   │   ├── splash.png     # Splash page background
 │   │   ├── dialog-background.jpg # Dialog window background
 │   │   └── chart.png      # Default chart image for display
 │   └── icons/             # Application icons
@@ -86,12 +88,14 @@ MizeKar/
 │   └── logo.ico           # Application icon for Windows
 ├── docs/                  # Documentation and resources
 │   ├── BUILD_INSTRUCTIONS.md  # Detailed build instructions
+│   ├── CRUSh.md           # Project guidelines and structure
 │   └── Screenshots/       # Application screenshots
 │       ├── splash-screen.png, main.png, category.png
 │       ├── folders.png, empty-folders.png, charts.png
 │       ├── add-folder.png, remove-folder.png, upload-chart.png
 │       ├── about-us.png, contact-us.png, error.png
 │       └── validate-name.png
+├── MainWindow.xaml        # Main application window with Frame
 ├── App.xaml               # Application entry point
 ├── MizeKar.csproj         # Project configuration
 └── MizeKar.sln            # Solution file
@@ -143,8 +147,8 @@ dotnet publish -c Release -r win-x64 --self-contained
 
 ### Splash Screen
 
-- Application starts with a 2-second splash screen
-- Automatically transitions to main screen
+- Application starts with a 5-second splash screen
+- Automatically transitions to main page with smooth animation
 
 ### Main Navigation
 
@@ -194,7 +198,7 @@ dotnet publish -c Release -r win-x64 --self-contained
 Key configuration constants in `App.xaml.cs`:
 
 - `DATA_FOLDER_NAME = "Data"` - Root data folder name
-- `SPLASH_SCREEN_DURATION_MS = 2000` - Splash screen duration
+- `SPLASH_SCREEN_DURATION_MS = 5000` - Splash screen duration (5 seconds)
 
 ## 🧪 Testing
 
@@ -246,6 +250,14 @@ For support and questions:
 
 ## 🔄 Recent Updates
 
+### Version 4.0 - Page-Based Navigation Architecture
+
+- **Flicker-Free Navigation**: Complete rewrite using WPF Frame-based navigation
+- **Single Window Design**: One main window with Page navigation for zero screen flashing
+- **Instant Transitions**: Smooth, instant page transitions with no desktop background showing
+- **Optimized Performance**: Pages are kept in memory for fast back/forward navigation
+- **Improved UX**: Eliminates all navigation delays and visual glitches
+
 ### Version 3.0 - Image Display & Enhanced UX
 
 - **Image Display System**: Special chart category for image upload and display
@@ -262,10 +274,10 @@ For support and questions:
 - **Right-to-Left Layout**: Natural Persian reading direction
 - **4-Row Display**: Optimized folder management interface
 - **Manual Refresh**: Refresh button for immediate updates
-- **Enhanced Navigation**: Improved screen transitions and navigation
 
 ### Technical Improvements
 
+- **Page-Based Architecture**: Modern WPF navigation pattern using Frame and Page
 - **File System Watcher**: Category-specific monitoring
 - **Animation System**: Smooth visual feedback for user actions
 - **Error Handling**: Comprehensive error management with custom dialogs
