@@ -18,91 +18,29 @@ A modern, fullscreen Windows desktop application for managing folder structures 
 
 ## 📸 Screenshots
 
-### Splash Screen
+### Application Flow
 
-![Splash Screen](./docs/Screenshots/splash-screen.png)
-- Displays for 2 seconds with app branding
-- Automatic transition to main screen
-
-### Main Screen
-
-![Main Screen](./docs/Screenshots/main.png)
-- Fullscreen navigation with Persian/English options
-- Login, About Us, Contact Us, and Exit buttons
-
-### Category Screen
-
-![Category Screen](./docs/Screenshots/category.png)
-- **3x3 Grid Layout** - Beautiful presentation of 9 main categories
-- **Category Selection** - Click any category to manage folders within it
-- **Structured Organization** - Prevents folder creation in root Data directory
-
-### Folder Management
-
-![Folder Management](./docs/Screenshots/folders.png)
-- **4-Row Layout** - Optimized display with exactly 4 visible rows
-- **Right-to-Left Alignment** - Natural Persian reading direction
-- **Category-Specific** - Shows only folders from selected category
-- **Real-time Updates** - File system watcher monitors category changes
-- **Manual Refresh** - Refresh button for immediate folder list updates
-
-### Empty State
-
-![Empty Folders](./docs/Screenshots/empty-folders.png)
-- **User-Friendly Message** - Clear "پوشه‌ای وجود ندارد. یک پوشه ایجاد کنید" when no folders exist
-- **Guidance** - Prompts users to create their first folder
-
-### Image Display System
-
-![Chart Display](./docs/Screenshots/charts.png)
-- **Chart Category** - Special handling for chart images instead of folders
-- **Image Upload** - Upload and replace chart images
-- **Fullscreen Viewer** - Click images to view in fullscreen mode
+| Screen | Description | Screenshot |
+|--------|-------------|------------|
+| **Splash Screen** | Displays for 2 seconds with app branding<br>Automatic transition to main screen | ![Splash Screen](./docs/Screenshots/splash-screen.png) |
+| **Main Screen** | Fullscreen navigation with Persian/English options<br>Login, About Us, Contact Us, and Exit buttons | ![Main Screen](./docs/Screenshots/main.png) |
+| **Category Screen** | 3x3 grid layout with 9 main categories<br>Category selection for organized folder management | ![Category Screen](./docs/Screenshots/category.png) |
+| **Folder Management** | 4-row optimized display with RTL alignment<br>Category-specific folders with real-time updates | ![Folder Management](./docs/Screenshots/folders.png) |
+| **Empty State** | User-friendly message when no folders exist<br>Clear guidance to create first folder | ![Empty Folders](./docs/Screenshots/empty-folders.png) |
+| **Image Display** | Chart category with image upload capability<br>Fullscreen viewer for uploaded images | ![Chart Display](./docs/Screenshots/charts.png) |
 
 ### Dialog Examples
 
-#### Create Folder Dialog
-![Create Folder](./docs/Screenshots/add-folder.png)
-- **Persian Input Validation** - Only allows valid Persian characters
-- **Visual Feedback** - Real-time validation with color indicators
+| Dialog Type | Description | Screenshot |
+|-------------|-------------|------------|
+| **Create Folder** | Persian input validation with visual feedback<br>Real-time character validation | ![Create Folder](./docs/Screenshots/add-folder.png) |
+| **Delete Confirmation** | Safety confirmation for folder deletion<br>Clear information about folder being deleted | ![Delete Folder](./docs/Screenshots/remove-folder.png) |
+| **About Us** | Application information and features<br>Professional Persian-styled interface | ![About Us](./docs/Screenshots/about-us.png) |
+| **Contact Us** | Support information and contact details<br>Clean, readable design | ![Contact Us](./docs/Screenshots/contact-us.png) |
+| **Error Handling** | User-friendly error messages in Persian<br>Consistent with application theme | ![Error Dialog](./docs/Screenshots/error.png) |
+| **Image Upload** | File selection dialog for chart images<br>Real-time status updates | ![Upload Chart](./docs/Screenshots/upload-chart.png) |
+| **Input Validation** | Real-time character validation<br>Visual indicators for valid/invalid input | ![Name Validation](./docs/Screenshots/validate-name.png) |
 
-#### Delete Confirmation
-![Delete Folder](./docs/Screenshots/remove-folder.png)
-- **Safety Confirmation** - Prevents accidental folder deletion
-- **Clear Information** - Shows folder name being deleted
-
-#### About Us Dialog
-![About Us](./docs/Screenshots/about-us.png)
-- **Application Information** - Details about MizeKar features
-- **Professional Design** - Consistent Persian-styled interface
-
-#### Contact Us Dialog
-![Contact Us](./docs/Screenshots/contact-us.png)
-- **Support Information** - Contact details and support channels
-- **Modern Interface** - Clean, readable design
-
-#### Error Handling
-![Error Dialog](./docs/Screenshots/error.png)
-- **User-Friendly Errors** - Clear error messages in Persian
-- **Professional Design** - Consistent with application theme
-
-#### Image Upload
-![Upload Chart](./docs/Screenshots/upload-chart.png)
-- **File Selection** - Standard Windows file dialog for image selection
-- **Status Updates** - Real-time feedback on upload progress
-
-#### Input Validation
-![Name Validation](./docs/Screenshots/validate-name.png)
-- **Character Validation** - Blocks invalid characters in real-time
-- **Visual Indicators** - Clear feedback for valid/invalid input
-- **Empty State Messages** - Clear message when no folders exist in a category
-
-### Image Display System
-
-- **Chart Category** - Special handling for "چارت عوامل اجرایی، آموزشی و پرورشی" category
-- **Image Upload** - Upload and replace chart images with automatic display
-- **Fullscreen Viewer** - Click images to view in fullscreen mode
-- **Default Chart** - Pre-loaded default chart image for immediate use
 
 ## 🛠️ Technology Stack
 
