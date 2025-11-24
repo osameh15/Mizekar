@@ -11,9 +11,9 @@ namespace MizeKar
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            // Navigate to folder management screen
-            var folderScreen = new FolderManagementScreen();
-            folderScreen.Show();
+            // Navigate to category selection screen
+            var categoryScreen = new CategoryScreen();
+            categoryScreen.Show();
             this.Close();
         }
 

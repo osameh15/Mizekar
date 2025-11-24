@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Input;
@@ -11,13 +12,29 @@ namespace MizeKar
     {
         private readonly FolderService _folderService;
         private readonly ObservableCollection<FolderInfo> _folders;
+        private readonly string? _categoryPath;
 
-        public FolderManagementScreen()
+        public FolderManagementScreen() : this(null)
+        {
+        }
+
+        public FolderManagementScreen(string? categoryPath)
         {
             InitializeComponent();
             
+            _categoryPath = categoryPath;
             _folderService = new FolderService();
             _folders = new ObservableCollection<FolderInfo>();
+            
+            // Update title if in category mode
+            if (_categoryPath != null)
+            {
+                var categoryName = System.IO.Path.GetFileName(_categoryPath);
+                TitleTextBlock.Text = $"مدیریت پوشه‌ها - {categoryName}";
+                
+                // Start category-specific watching
+                _folderService.StartCategoryWatching(_categoryPath);
+            }
             
             LoadFolders();
             
@@ -28,7 +45,21 @@ namespace MizeKar
         private void LoadFolders()
         {
             _folders.Clear();
-            var folders = _folderService.GetFolders();
+            
+            List<FolderInfo> folders;
+            if (_categoryPath != null)
+            {
+                // Load folders from specific category
+                folders = _folderService.GetFoldersFromCategory(_categoryPath);
+                var categoryName = System.IO.Path.GetFileName(_categoryPath);
+                UpdateStatus($"تعداد {folders.Count} پوشه در دسته '{categoryName}' یافت شد");
+            }
+            else
+            {
+                // Load all folders from root (for backward compatibility)
+                folders = _folderService.GetFolders();
+                UpdateStatus($"تعداد {folders.Count} پوشه یافت شد");
+            }
             
             foreach (var folder in folders)
             {
@@ -36,7 +67,6 @@ namespace MizeKar
             }
             
             FoldersItemsControl.ItemsSource = _folders;
-            UpdateStatus($"تعداد {_folders.Count} پوشه یافت شد");
         }
 
         private void OnFoldersChanged(object? sender, EventArgs e)
@@ -55,6 +85,13 @@ namespace MizeKar
             this.Close();
         }
 
+        private void BackToCategories_Click(object sender, RoutedEventArgs e)
+        {
+            var categoryScreen = new CategoryScreen();
+            categoryScreen.Show();
+            this.Close();
+        }
+
         private void ExitButton_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
@@ -67,13 +104,13 @@ namespace MizeKar
             
             if (dialog.ShowDialog() == true && !string.IsNullOrWhiteSpace(dialog.FolderName))
             {
-                if (_folderService.CreateFolder(dialog.FolderName))
+                if (_folderService.CreateFolder(dialog.FolderName, _categoryPath))
                 {
                     UpdateStatus("پوشه با موفقیت ایجاد شد");
                 }
                 else
                 {
-                    MessageBox.Show("خطا در ایجاد پوشه. لطفاً نام دیگری انتخاب کنید.", 
+                    MessageBox.Show("خطا در ایجاد پوشه، لطفاً نام دیگری انتخاب کنید", 
                                   "خطا", 
                                   MessageBoxButton.OK, 
                                   MessageBoxImage.Error);

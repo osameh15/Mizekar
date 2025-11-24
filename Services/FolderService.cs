@@ -10,6 +10,7 @@ namespace MizeKar.Services
     {
         private readonly string _dataFolderPath;
         private FileSystemWatcher? _fileSystemWatcher;
+        private FileSystemWatcher? _categoryWatcher;
 
         public FolderService()
         {
@@ -33,7 +34,7 @@ namespace MizeKar.Services
             _fileSystemWatcher = new FileSystemWatcher(_dataFolderPath)
             {
                 NotifyFilter = NotifyFilters.DirectoryName | NotifyFilters.LastWrite,
-                IncludeSubdirectories = false,
+                IncludeSubdirectories = true,
                 EnableRaisingEvents = true
             };
 
@@ -68,7 +69,28 @@ namespace MizeKar.Services
             }
         }
 
-        public bool CreateFolder(string folderName)
+        public List<FolderInfo> GetFoldersFromCategory(string categoryPath)
+        {
+            try
+            {
+                if (!Directory.Exists(categoryPath))
+                    return new List<FolderInfo>();
+
+                var directories = Directory.GetDirectories(categoryPath);
+                return directories.Select(dir => new FolderInfo(
+                    Path.GetFileName(dir),
+                    dir
+                )).ToList();
+            }
+            catch (Exception ex)
+            {
+                // Log error and return empty list
+                System.Diagnostics.Debug.WriteLine($"Error reading category folders: {ex.Message}");
+                return new List<FolderInfo>();
+            }
+        }
+
+        public bool CreateFolder(string folderName, string? parentPath = null)
         {
             try
             {
@@ -82,7 +104,8 @@ namespace MizeKar.Services
                 if (string.IsNullOrWhiteSpace(sanitizedName))
                     return false;
 
-                var folderPath = Path.Combine(_dataFolderPath, sanitizedName);
+                var basePath = parentPath ?? _dataFolderPath;
+                var folderPath = Path.Combine(basePath, sanitizedName);
                 
                 if (Directory.Exists(folderPath))
                     return false;
@@ -129,9 +152,35 @@ namespace MizeKar.Services
             }
         }
 
+        public void StartCategoryWatching(string categoryPath)
+        {
+            StopCategoryWatching();
+            
+            if (Directory.Exists(categoryPath))
+            {
+                _categoryWatcher = new FileSystemWatcher(categoryPath)
+                {
+                    NotifyFilter = NotifyFilters.DirectoryName | NotifyFilters.LastWrite,
+                    IncludeSubdirectories = false,
+                    EnableRaisingEvents = true
+                };
+
+                _categoryWatcher.Created += OnFolderChanged;
+                _categoryWatcher.Deleted += OnFolderChanged;
+                _categoryWatcher.Renamed += OnFolderChanged;
+            }
+        }
+
+        public void StopCategoryWatching()
+        {
+            _categoryWatcher?.Dispose();
+            _categoryWatcher = null;
+        }
+
         public void Dispose()
         {
             _fileSystemWatcher?.Dispose();
+            _categoryWatcher?.Dispose();
         }
     }
 }
