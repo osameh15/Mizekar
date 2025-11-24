@@ -37,7 +37,7 @@
                 
                 <!-- Left Side: Exit Button -->
                 <Button Grid.Column="0"
-                        Width="100" Height="45"
+                        Width="120" Height="45"
                         Background="Transparent" BorderThickness="0"
                         Margin="0,0,10,0"
                         Click="ExitButton_Click"
@@ -50,13 +50,13 @@
                 
                 <!-- Left Side: Refresh Button -->
                 <Button Grid.Column="1"
-                        Width="100" Height="45"
+                        Width="120" Height="45"
                         Background="Transparent" BorderThickness="0"
                         Margin="0,0,10,0"
                         Click="RefreshButton_Click"
                         Cursor="Hand">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                        <TextBlock Text="بارگذاری" FontSize="14" Foreground="White" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                        <TextBlock Text="بارگذاری مجدد" FontSize="14" Foreground="White" VerticalAlignment="Center" Margin="0,0,8,0"/>
                         <Image Source="/Assets/icons/refresh.png" Width="24" Height="24"/>
                     </StackPanel>
                 </Button>
@@ -86,7 +86,7 @@
 
                 <!-- Right Side: Home Button -->
                 <Button Grid.Column="4"
-                        Width="100" Height="45"
+                        Width="120" Height="45"
                         Background="Transparent" BorderThickness="0"
                         Margin="0,0,10,0"
                         Click="BackButton_Click"

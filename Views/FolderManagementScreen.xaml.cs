@@ -116,10 +116,9 @@ namespace MizeKar
                 }
                 else
                 {
-                    MessageBox.Show("خطا در ایجاد پوشه، لطفاً نام دیگری انتخاب کنید", 
-                                  "خطا", 
-                                  MessageBoxButton.OK, 
-                                  MessageBoxImage.Error);
+                    var errorDialog = new ErrorDialog("خطا در ایجاد پوشه، لطفاً نام دیگری انتخاب کنید");
+                    errorDialog.Owner = this;
+                    errorDialog.ShowDialog();
                 }
             }
         }
@@ -141,12 +140,11 @@ namespace MizeKar
             {
                 var folderName = System.IO.Path.GetFileName(folderPath);
                 
-                var result = MessageBox.Show($"آیا از حذف پوشه '{folderName}' اطمینان دارید؟", 
-                                           "تأیید حذف", 
-                                           MessageBoxButton.YesNo, 
-                                           MessageBoxImage.Warning);
+                // Show delete confirmation dialog
+                var confirmDialog = new DeleteConfirmDialog(folderName);
+                confirmDialog.Owner = this;
                 
-                if (result == MessageBoxResult.Yes)
+                if (confirmDialog.ShowDialog() == true && confirmDialog.DeleteConfirmed)
                 {
                     if (_folderService.DeleteFolder(folderPath))
                     {
@@ -154,10 +152,9 @@ namespace MizeKar
                     }
                     else
                     {
-                        MessageBox.Show("خطا در حذف پوشه. لطفاً دوباره تلاش کنید.", 
-                                      "خطا", 
-                                      MessageBoxButton.OK, 
-                                      MessageBoxImage.Error);
+                        var errorDialog = new ErrorDialog("خطا در حذف پوشه. لطفاً دوباره تلاش کنید");
+                        errorDialog.Owner = this;
+                        errorDialog.ShowDialog();
                     }
                 }
             }
