@@ -168,17 +168,6 @@
                                                 HorizontalAlignment="Center">
                                         <Button Width="80" Height="35"
                                                Style="{StaticResource NoHoverButtonStyle}"
-                                               Margin="0,0,5,0"
-                                               Click="DeleteFolder_Click"
-                                               Tag="{Binding Path}">
-                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                                <TextBlock Text="حذف" FontSize="12" Foreground="White" VerticalAlignment="Center" Margin="0,0,6,0"/>
-                                                <Image Source="/Assets/icons/remove.png" Width="18" Height="18"/>
-                                            </StackPanel>
-                                        </Button>
-                                                
-                                        <Button Width="80" Height="35"
-                                               Style="{StaticResource NoHoverButtonStyle}"
                                                Click="ViewFolder_Click"
                                                Tag="{Binding Path}">
                                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
@@ -186,7 +175,17 @@
                                                 <Image Source="/Assets/icons/view.png" Width="18" Height="18"/>
                                             </StackPanel>
                                         </Button>
-                                    </StackPanel>
+                                            <Button Width="80" Height="35"
+                                               Style="{StaticResource NoHoverButtonStyle}"
+                                               Margin="0,0,5,0"
+                                               Click="DeleteFolder_Click"
+                                               Tag="{Binding Path}">
+                                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                                    <TextBlock Text="حذف" FontSize="12" Foreground="White" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                                                    <Image Source="/Assets/icons/remove.png" Width="18" Height="18"/>
+                                                </StackPanel>
+                                            </Button>
+                                        </StackPanel>
                                 </Grid>
                             </Border>
                         </DataTemplate>
