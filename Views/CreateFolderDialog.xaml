@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="ایجاد پوشه جدید"
         Width="400"
-        Height="250"
+        Height="280"
         WindowStyle="None"
         WindowStartupLocation="CenterOwner"
         ResizeMode="NoResize"
@@ -34,15 +34,32 @@
                            Foreground="#2C3E50"
                            Margin="0,0,0,15"/>
                 
-                <TextBox x:Name="FolderNameTextBox"
-                         FontSize="14"
-                         Height="35"
-                         Padding="10"
-                         Background="White"
-                         BorderBrush="#BDC3C7"
-                         BorderThickness="1"
-                         TextAlignment="Right"
-                         KeyDown="FolderNameTextBox_KeyDown"/>
+                <Grid>
+                    <TextBox x:Name="FolderNameTextBox"
+                             FontSize="14"
+                             Height="45"
+                             Padding="10"
+                             Background="White"
+                             BorderBrush="#BDC3C7"
+                             BorderThickness="1"
+                             TextAlignment="Right"
+                             KeyDown="FolderNameTextBox_KeyDown"
+                             PreviewTextInput="FolderNameTextBox_PreviewTextInput"/>
+                    
+                    <!-- Invalid Character Indicator -->
+                    <Border x:Name="InvalidCharIndicator"
+                            Background="#FFE74C3C"
+                            Opacity="0"
+                            CornerRadius="3"
+                            Margin="2">
+                        <TextBlock Text="!مجاز نیست" 
+                                   FontSize="16" 
+                                   FontWeight="Bold"
+                                   Foreground="White"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"/>
+                    </Border>
+                </Grid>
                 
                 <!-- Action Buttons -->
                 <StackPanel Orientation="Horizontal" 

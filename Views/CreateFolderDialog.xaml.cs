@@ -1,5 +1,7 @@
+using System;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media.Animation;
 
 namespace MizeKar
 {
@@ -17,9 +19,20 @@ namespace MizeKar
         {
             if (!string.IsNullOrWhiteSpace(FolderNameTextBox.Text))
             {
-                FolderName = FolderNameTextBox.Text.Trim();
-                DialogResult = true;
-                this.Close();
+                // Validate folder name
+                if (IsValidFolderName(FolderNameTextBox.Text.Trim()))
+                {
+                    FolderName = FolderNameTextBox.Text.Trim();
+                    DialogResult = true;
+                    this.Close();
+                }
+                else
+                {
+                    var errorDialog = new ErrorDialog("نام پوشه فقط می‌تواند شامل حروف فارسی، اعداد، خط تیره (-) و زیرخط (_) باشد.");
+                    errorDialog.Owner = this;
+                    errorDialog.ShowDialog();
+                    FolderNameTextBox.Focus();
+                }
             }
             else
             {
@@ -29,6 +42,24 @@ namespace MizeKar
                               MessageBoxImage.Warning);
                 FolderNameTextBox.Focus();
             }
+        }
+
+        private bool IsValidFolderName(string folderName)
+        {
+            // Persian characters range: \u0600-\u06FF
+            // Numbers: 0-9
+            // Allowed special characters: - _
+            foreach (char c in folderName)
+            {
+                if (!((c >= '\u0600' && c <= '\u06FF') || // Persian characters
+                      (c >= '0' && c <= '9') ||           // Numbers
+                      c == '-' ||                         // Hyphen
+                      c == '_'))                          // Underscore
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
@@ -47,6 +78,50 @@ namespace MizeKar
             {
                 CancelButton_Click(sender, e);
             }
+        }
+
+        private void FolderNameTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            // Validate each character as it's being typed
+            foreach (char c in e.Text)
+            {
+                if (!((c >= '\u0600' && c <= '\u06FF') || // Persian characters
+                      (c >= '0' && c <= '9') ||           // Numbers
+                      c == '-' ||                         // Hyphen
+                      c == '_'))                          // Underscore
+                {
+                    e.Handled = true; // Prevent the character from being entered
+                    ShowInvalidCharacterIndicator();
+                    return;
+                }
+            }
+        }
+
+        private void ShowInvalidCharacterIndicator()
+        {
+            // Stop any existing animation first
+            InvalidCharIndicator.BeginAnimation(OpacityProperty, null);
+            
+            // Reset to fully transparent
+            InvalidCharIndicator.Opacity = 0;
+            
+            // Create animation to show the indicator
+            var animation = new DoubleAnimation
+            {
+                From = 0,
+                To = 0.8,
+                Duration = TimeSpan.FromMilliseconds(150),
+                AutoReverse = true,
+                RepeatBehavior = new RepeatBehavior(2)
+            };
+            
+            // Set animation completion handler to ensure it returns to transparent
+            animation.Completed += (s, e) =>
+            {
+                InvalidCharIndicator.Opacity = 0;
+            };
+            
+            InvalidCharIndicator.BeginAnimation(OpacityProperty, animation);
         }
     }
 }
