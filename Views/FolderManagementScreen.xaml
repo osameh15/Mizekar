@@ -126,14 +126,16 @@
                 <!-- Folders List -->
                 <ScrollViewer VerticalScrollBarVisibility="Auto" 
                               HorizontalScrollBarVisibility="Disabled"
-                              VerticalAlignment="Top">
+                              VerticalAlignment="Top"
+                              HorizontalAlignment="Center">
                     <ItemsControl x:Name="FoldersItemsControl"
                                   VerticalAlignment="Top">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
-                                <WrapPanel Orientation="Horizontal" 
-                                           HorizontalAlignment="Right"
-                                           VerticalAlignment="Top"/>
+                                <UniformGrid Columns="6" 
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Top"
+                                    FlowDirection="RightToLeft"/>
                             </ItemsPanelTemplate>
                         </ItemsControl.ItemsPanel>
                     
