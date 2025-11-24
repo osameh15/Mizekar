@@ -1,12 +1,15 @@
 # MizeKar - Fullscreen Windows Folder Manager
 
-A modern, fullscreen Windows desktop application for managing folder structures with Persian language support.
+A modern, fullscreen Windows desktop application for managing folder structures with Persian language support and category-based organization.
 
 ## 🚀 Features
 
 - **Fullscreen Experience** - True fullscreen window with no title bars or borders
 - **Persian Language Support** - Full UTF-8 support for Persian folder names and UI elements with Shabnam font
+- **Category-Based Organization** - 9 main categories in 3x3 grid layout for structured folder management
 - **Dynamic Folder Management** - Real-time updates when folders are added or deleted
+- **Input Validation** - Persian-only input with visual feedback for invalid characters
+- **Custom Dialogs** - Professional Persian-styled dialogs for all user interactions
 - **Intuitive Interface** - Clean, modern UI with smooth navigation
 - **File System Integration** - Direct integration with Windows Explorer
 
@@ -22,11 +25,19 @@ A modern, fullscreen Windows desktop application for managing folder structures 
 - Fullscreen navigation with Persian/English options
 - Login, About Us, Contact Us, and Exit buttons
 
+### Category Screen
+
+- **3x3 Grid Layout** - Beautiful presentation of 9 main categories
+- **Category Selection** - Click any category to manage folders within it
+- **Structured Organization** - Prevents folder creation in root Data directory
+
 ### Folder Management
 
-- Dynamic display of folder structure
-- Create, delete, and open folders
-- Real-time updates with file system watcher
+- **4-Row Layout** - Optimized display with exactly 4 visible rows
+- **Right-to-Left Alignment** - Natural Persian reading direction
+- **Category-Specific** - Shows only folders from selected category
+- **Real-time Updates** - File system watcher monitors category changes
+- **Manual Refresh** - Refresh button for immediate folder list updates
 
 ## 🛠️ Technology Stack
 
@@ -42,10 +53,13 @@ MizeKar/
 ├── Views/                 # XAML windows and dialogs
 │   ├── SplashScreen.xaml  # 2-second splash screen
 │   ├── MainScreen.xaml    # Main navigation screen
+│   ├── CategoryScreen.xaml # Category selection screen (3x3 grid)
 │   ├── FolderManagementScreen.xaml  # Folder management interface
 │   ├── AboutUsDialog.xaml # About information dialog
 │   ├── ContactUsDialog.xaml # Contact information dialog
-│   └── CreateFolderDialog.xaml # Folder creation dialog
+│   ├── CreateFolderDialog.xaml # Folder creation dialog
+│   ├── DeleteConfirmDialog.xaml # Folder deletion confirmation
+│   └── ErrorDialog.xaml   # Error message display
 ├── Models/                # Data models
 │   └── FolderInfo.cs      # Folder data model
 ├── Services/              # Business logic
@@ -54,10 +68,14 @@ MizeKar/
 ├── Assets/                # Application assets
 │   ├── fonts/             # Font files
 │   │   └── Shabnam/       # Shabnam Persian font family
-│   └── images/            # Background images
-│       ├── background.png # Main application background
-│       ├── splash.png     # Splash screen background
-│       └── dialog-background.jpg # Dialog window background
+│   ├── images/            # Background images
+│   │   ├── background.png # Main application background
+│   │   ├── splash.png     # Splash screen background
+│   │   └── dialog-background.jpg # Dialog window background
+│   └── icons/             # Application icons
+│       ├── about-us.png, add-folder.png, close.png, confirm.png
+│       ├── contact-us.png, enter.png, exit.png, home.png
+│       ├── remove.png, setting.png, stat.png, view.png
 ├── App.xaml               # Application entry point
 ├── MizeKar.csproj         # Project configuration
 └── MizeKar.sln            # Solution file
@@ -114,26 +132,36 @@ dotnet publish -c Release -r win-x64 --self-contained
 
 ### Main Navigation
 
-- **ورود (Login)** - Opens folder management screen
+- **ورود (Login)** - Opens category selection screen
 - **درباره ما (About Us)** - Shows application information
 - **ارتباط با ما (Contact Us)** - Shows contact information
 - **خروج (Exit)** - Closes the application
 
+### Category Selection
+
+- **9 Main Categories** - Pre-defined categories in 3x3 grid layout
+- **Category Access** - Click any category to manage its folders
+- **Structured Hierarchy** - All folders are organized under categories
+
 ### Folder Management
 
 - **Data Folder**: Application creates a "Data" folder in the application directory
+- **Category-Based**: Folders are created within selected categories only
 - **Persian Support**: Full support for Persian folder names using UTF-8 encoding
+- **Input Validation**: Only Persian characters, numbers, hyphen (-), and underscore (_) allowed
 - **Real-time Updates**: UI updates immediately when folders are added or deleted
 - **Folder Operations**:
-  - Create new folders with Persian names
-  - Delete folders with confirmation dialog
+  - Create new folders with validated Persian names
+  - Delete folders with custom confirmation dialog
   - Open folders in Windows Explorer
+  - Manual refresh with refresh button
 
 ### Keyboard Shortcuts
 
 - `Escape` - Go back to previous screen
 - `Ctrl+N` - Create new folder
 - `Enter` - Confirm dialog actions
+- **Dialog Navigation**: Enter to confirm, Escape to cancel in all dialogs
 
 ## 🔧 Configuration
 
@@ -147,10 +175,15 @@ Key configuration constants in `App.xaml.cs`:
 Test the following features:
 
 1. **Fullscreen behavior** on different screen resolutions
-2. **Persian folder name** creation and display
-3. **Real-time folder updates** (add/delete folders externally)
-4. **Folder operations** (create, delete, open in Explorer)
-5. **Splash screen timing** and transitions
+2. **Category navigation** - flow from Main → Categories → Folder Management
+3. **Persian folder name** creation with input validation
+4. **Input validation** - try typing English characters (should be blocked with visual feedback)
+5. **Custom dialogs** - create, delete, and error dialogs
+6. **Real-time folder updates** (add/delete folders externally)
+7. **Folder operations** (create, delete, open in Explorer)
+8. **Manual refresh** - use refresh button to reload folder list
+9. **Splash screen timing** and transitions
+10. **Right-to-left alignment** in folder management screen
 
 ## 🐛 Troubleshooting
 
@@ -158,6 +191,8 @@ Test the following features:
 - **File permissions**: Check permissions for Data folder operations
 - **Persian fonts**: Verify Persian font support in Windows
 - **Clean build**: Try `dotnet clean` then `dotnet build`
+- **Input issues**: Only Persian characters, numbers, - and _ are allowed for folder names
+- **Animation stuck**: Rapid typing may cause visual feedback to remain - fixed in latest version
 
 ## 📄 License
 
@@ -177,6 +212,25 @@ For support and questions:
 
 - Email: osirandoust@gmail.com
 - Contact Us: [Telegram](https://t.me/osameh_ir)
+
+## 🔄 Recent Updates
+
+### Version 2.0 - Category System & Enhanced UI
+
+- **Category-Based Organization**: 9 main categories in 3x3 grid layout
+- **Custom Persian Dialogs**: Professional dialogs for all user interactions
+- **Input Validation**: Persian-only input with visual feedback
+- **Right-to-Left Layout**: Natural Persian reading direction
+- **4-Row Display**: Optimized folder management interface
+- **Manual Refresh**: Refresh button for immediate updates
+- **Enhanced Navigation**: Improved screen transitions and navigation
+
+### Technical Improvements
+
+- **File System Watcher**: Category-specific monitoring
+- **Animation System**: Smooth visual feedback for user actions
+- **Error Handling**: Comprehensive error management with custom dialogs
+- **Input Security**: Protected against invalid character input
 
 ## 🗂️ Related Projects
 
