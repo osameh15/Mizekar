@@ -125,7 +125,7 @@
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
                             <WrapPanel Orientation="Horizontal" 
-                                       HorizontalAlignment="Center"
+                                       HorizontalAlignment="Right"
                                        VerticalAlignment="Top"/>
                         </ItemsPanelTemplate>
                     </ItemsControl.ItemsPanel>
