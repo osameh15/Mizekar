@@ -24,10 +24,19 @@
     <EmbeddedResource Include="Assets\fonts\Shabnam\*.woff" />
     <EmbeddedResource Include="Assets\fonts\Shabnam\*.woff2" />
     
-    <!-- Include background images as WPF resources -->
-    <Resource Include="Assets\images\background.png" />
-    <Resource Include="Assets\images\splash.png" />
-    <Resource Include="Assets\images\dialog-background.jpg" />
+    <!-- Include background images as Content and copy to output directory -->
+    <Content Include="Assets\images\background.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\images\splash.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\images\dialog-background.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\images\chart.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     
     <!-- Include application logo -->
     <Resource Include="Assets\logo.png" />

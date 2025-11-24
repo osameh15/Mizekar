@@ -66,10 +66,21 @@ namespace MizeKar
             {
                 var categoryName = System.IO.Path.GetFileName(categoryPath);
                 
-                // Navigate to FolderManagementScreen with the selected category
-                var folderScreen = new FolderManagementScreen(categoryPath);
-                folderScreen.Show();
-                this.Close();
+                // Special handling for chart category
+                if (categoryName == "چارت عوامل اجرایی، آموزشی و پرورشی")
+                {
+                    // Navigate to ImageDisplayScreen for chart category
+                    var imageScreen = new ImageDisplayScreen(categoryPath);
+                    imageScreen.Show();
+                    this.Close();
+                }
+                else
+                {
+                    // Navigate to FolderManagementScreen with the selected category
+                    var folderScreen = new FolderManagementScreen(categoryPath);
+                    folderScreen.Show();
+                    this.Close();
+                }
             }
         }
 
