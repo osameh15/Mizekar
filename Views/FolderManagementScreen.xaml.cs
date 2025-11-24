@@ -92,6 +92,12 @@ namespace MizeKar
             this.Close();
         }
 
+        private void RefreshButton_Click(object sender, RoutedEventArgs e)
+        {
+            LoadFolders();
+            UpdateStatus("لیست پوشه‌ها بارگذاری شد");
+        }
+
         private void ExitButton_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
