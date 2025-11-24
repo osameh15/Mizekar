@@ -70,6 +70,12 @@
     <Resource Include="Assets\icons\stat.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+	  <Resource Include="Assets\icons\refresh.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Assets\icons\categories.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Resource>
   </ItemGroup>
 
 </Project>
