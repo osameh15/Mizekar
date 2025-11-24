@@ -28,7 +28,7 @@ namespace MizeKar
                 }
                 else
                 {
-                    var errorDialog = new ErrorDialog("نام پوشه فقط می‌تواند شامل حروف فارسی، اعداد، خط تیره (-) و زیرخط (_) باشد.");
+                    var errorDialog = new ErrorDialog("نام پوشه فقط می‌تواند شامل حروف فارسی، اعداد، فاصله، خط تیره (-) و زیرخط (_) باشد.");
                     errorDialog.Owner = this;
                     errorDialog.ShowDialog();
                     FolderNameTextBox.Focus();
@@ -48,13 +48,14 @@ namespace MizeKar
         {
             // Persian characters range: \u0600-\u06FF
             // Numbers: 0-9
-            // Allowed special characters: - _
+            // Allowed special characters: - _ and space
             foreach (char c in folderName)
             {
                 if (!((c >= '\u0600' && c <= '\u06FF') || // Persian characters
                       (c >= '0' && c <= '9') ||           // Numbers
                       c == '-' ||                         // Hyphen
-                      c == '_'))                          // Underscore
+                      c == '_' ||                         // Underscore
+                      c == ' '))                          // Space
                 {
                     return false;
                 }
@@ -88,7 +89,8 @@ namespace MizeKar
                 if (!((c >= '\u0600' && c <= '\u06FF') || // Persian characters
                       (c >= '0' && c <= '9') ||           // Numbers
                       c == '-' ||                         // Hyphen
-                      c == '_'))                          // Underscore
+                      c == '_' ||                         // Underscore
+                      c == ' '))                          // Space
                 {
                     e.Handled = true; // Prevent the character from being entered
                     ShowInvalidCharacterIndicator();
