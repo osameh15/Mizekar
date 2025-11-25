@@ -14,6 +14,7 @@ A modern, fullscreen Windows desktop application for managing folder structures 
 - **Dynamic Folder Management** - Real-time updates when folders are added or deleted
 - **Input Validation** - Persian-only input with visual feedback for invalid characters
 - **Custom Dialogs** - Professional Persian-styled dialogs for all user interactions
+- **Exit Confirmation** - Safety confirmation dialog prevents accidental application closure
 - **Intuitive Interface** - Clean, modern UI with instant page transitions
 - **File System Integration** - Direct integration with Windows Explorer
 - **Image Display System** - Special category for displaying and uploading chart images
@@ -44,6 +45,7 @@ A modern, fullscreen Windows desktop application for managing folder structures 
 | **Contact Us** | Support information and contact details<br>Clean, readable design | ![Contact Us](./docs/Screenshots/contact-us.png) |
 | **Error Handling** | User-friendly error messages in Persian<br>Consistent with application theme | ![Error Dialog](./docs/Screenshots/error-1.png) |
 | **Error Handling 2** | Duplicate folder name error<br>Clear guidance for user | ![Error Dialog 2](./docs/Screenshots/error-2.png) |
+| **Exit Confirmation** | Safety confirmation for application exit<br>Prevents accidental closure | ![Exit Dialog](./docs/Screenshots/exit-dialog.png) |
 | **Image Upload** | File selection dialog for chart images<br>Real-time status updates | ![Upload Chart](./docs/Screenshots/upload-chart.png) |
 | **Input Validation** | Real-time character validation<br>Visual indicators for valid/invalid input | ![Name Validation](./docs/Screenshots/validate-name.png) |
 
@@ -70,6 +72,7 @@ MizeKar/
 │   ├── ContactUsDialog.xaml # Contact information dialog
 │   ├── CreateFolderDialog.xaml # Folder creation dialog
 │   ├── DeleteConfirmDialog.xaml # Folder deletion confirmation
+│   ├── ExitConfirmDialog.xaml # Application exit confirmation
 │   ├── ErrorDialog.xaml   # Error message display
 │   └── ImageFullscreenWindow.xaml # Fullscreen image viewer
 ├── Models/                # Data models
@@ -98,7 +101,8 @@ MizeKar/
 │       ├── splash-screen.png, main.png, category.png
 │       ├── folders.png, empty-folders.png, charts.png
 │       ├── add-folder.png, remove-folder.png, upload-chart.png
-│       ├── about-us.png, contact-us.png, error.png
+│       ├── about-us.png, contact-us.png, exit-dialog.png
+│       ├── error-1.png, error-2.png
 │       └── validate-name.png
 ├── MainWindow.xaml        # Main application window with Frame
 ├── App.xaml               # Application entry point
@@ -157,7 +161,7 @@ dotnet publish -c Release -r win-x64 --self-contained
 
 ### Main Navigation
 
-- **خروج (Exit)** - Closes the application
+- **خروج (Exit)** - Shows confirmation dialog before closing the application
 - **کوچک کردن (Minimize)** - Minimizes the window to taskbar
 - **ورود (Login)** - Opens category selection screen
 - **درباره ما (About Us)** - Shows application information
@@ -263,6 +267,7 @@ For support and questions:
 
 ### Version 1.1.0 - UI Enhancements & Installer
 
+- **Exit Confirmation Dialog**: Safety confirmation dialog when clicking exit button on all pages
 - **Colorized Categories**: Each of the 9 categories now has a unique color with 70% opacity
 - **Watermark Logo**: Subtle logo watermark (30% opacity) on Category, Folder Management, and Image Display pages
 - **Minimize Button**: Added window minimize functionality to all pages (کوچک کردن)
