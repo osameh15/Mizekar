@@ -91,14 +91,14 @@ namespace MizeKar.Pages
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            // Navigate back using NavigationService
-            NavigationService?.GoBack();
+            // Navigate to MainPage (Home)
+            NavigationService?.Navigate(new MainPage());
         }
 
         private void BackToCategories_Click(object sender, RoutedEventArgs e)
         {
-            // Navigate back using NavigationService
-            NavigationService?.GoBack();
+            // Navigate to CategoryPage
+            NavigationService?.Navigate(new CategoryPage());
         }
 
         private void RefreshButton_Click(object sender, RoutedEventArgs e)

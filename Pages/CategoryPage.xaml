@@ -99,7 +99,7 @@
 
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <Border Background="#34495E"
+                        <Border Background="{Binding Color}"
                                 CornerRadius="12"
                                 Margin="15"
                                 Padding="20"

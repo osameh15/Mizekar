@@ -55,7 +55,7 @@
                 <Button Grid.Column="1"
                         Width="130" Height="45"
                         Style="{StaticResource NoHoverButtonStyle}"
-                        Margin="0,0,10,0"
+                        Margin="10,0,0,0"
                         Click="MinimizeButton_Click">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <TextBlock Text="کوچک کردن" FontSize="14" Foreground="White" VerticalAlignment="Center" Margin="0,0,8,0"/>
@@ -67,7 +67,7 @@
                 <Button Grid.Column="2"
                         Width="120" Height="45"
                         Style="{StaticResource NoHoverButtonStyle}"
-                        Margin="0,0,10,0"
+                        Margin="10,0,10,0"
                         Click="RefreshButton_Click">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <TextBlock Text="بارگذاری مجدد" FontSize="14" Foreground="White" VerticalAlignment="Center" Margin="0,0,8,0"/>
@@ -89,7 +89,6 @@
                 <Button Grid.Column="4"
                     Width="120" Height="45"
                     Style="{StaticResource NoHoverButtonStyle}"
-                    Margin="0,0,10,0"
                     Click="BackToCategories_Click">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <TextBlock Text="دسته‌بندی‌ها" FontSize="14" Foreground="White" VerticalAlignment="Center" Margin="0,0,8,0"/>
@@ -101,7 +100,6 @@
                 <Button Grid.Column="5"
                         Width="120" Height="45"
                         Style="{StaticResource NoHoverButtonStyle}"
-                        Margin="0,0,10,0"
                         Click="BackButton_Click">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <TextBlock Text="خانه" FontSize="14" Foreground="White" VerticalAlignment="Center" Margin="0,0,8,0"/>
@@ -111,7 +109,8 @@
 
                 <!-- Right Side: Add Folder Button -->
                 <Button Grid.Column="6"
-                        Width="120" Height="45"
+                        Width="130" Height="45"
+                        Margin="0,0,10,0"
                         Style="{StaticResource NoHoverButtonStyle}"
                         Click="CreateFolderButton_Click">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">

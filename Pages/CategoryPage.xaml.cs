@@ -26,14 +26,31 @@ namespace MizeKar.Pages
             _folderService.FoldersChanged += OnCategoriesChanged;
         }
 
+        // Colors for each category (9 distinct colors with 0.7 opacity)
+        private static readonly string[] CategoryColors = new[]
+        {
+            "#B300BCD4", // Cyan - آموزشی
+            "#B33498DB", // Blue - انجمن اولیاء
+            "#B32ECC71", // Green - بهداشت
+            "#B39B59B6", // Purple - سایر
+            "#B3F39C12", // Orange - مشاوره
+            "#B31ABC9C", // Teal - ورزش
+            "#B3E91E63", // Pink - پرورشی
+            "#B3607D8B", // Gray - چارت عوامل اجرایی
+            "#B3E74C3C" // Red - یادواره شهداء
+        };
+
         private void LoadCategories()
         {
             _categories.Clear();
             var categories = _folderService.GetFolders();
 
+            int colorIndex = 0;
             foreach (var category in categories)
             {
+                category.Color = CategoryColors[colorIndex % CategoryColors.Length];
                 _categories.Add(category);
+                colorIndex++;
             }
 
             CategoriesItemsControl.ItemsSource = _categories;
