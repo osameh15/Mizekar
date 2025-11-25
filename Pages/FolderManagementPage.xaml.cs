@@ -113,6 +113,15 @@ namespace MizeKar.Pages
             Application.Current.Shutdown();
         }
 
+        private void MinimizeButton_Click(object sender, RoutedEventArgs e)
+        {
+            var window = Window.GetWindow(this);
+            if (window != null)
+            {
+                window.WindowState = WindowState.Minimized;
+            }
+        }
+
         private void CreateFolderButton_Click(object sender, RoutedEventArgs e)
         {
             var dialog = new CreateFolderDialog();

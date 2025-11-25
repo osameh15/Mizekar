@@ -20,7 +20,7 @@
         <StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Center" Grid.Column="1" Margin="0, 80, 0, 0">
             <!-- Logo -->
             <Image Source="/Assets/logo.png"
-                   Width="120" Height="120"
+                   Width="132" Height="132"
                    HorizontalAlignment="Center"
                    Margin="0,0,0,30"/>
 

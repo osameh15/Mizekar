@@ -135,6 +135,15 @@ namespace MizeKar.Pages
             Application.Current.Shutdown();
         }
 
+        private void MinimizeButton_Click(object sender, RoutedEventArgs e)
+        {
+            var window = Window.GetWindow(this);
+            if (window != null)
+            {
+                window.WindowState = WindowState.Minimized;
+            }
+        }
+
         private void UpdateStatus(string message)
         {
             StatusTextBlock.Text = message;

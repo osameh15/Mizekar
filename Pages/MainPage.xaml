@@ -23,25 +23,62 @@
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
 
-                <!-- Logo on the Left -->
-                <Image Grid.Column="0"
-                       Source="/Assets/logo-white.png"
-                       Width="64" Height="64"
-                       VerticalAlignment="Center"
-                       Margin="0,0,20,0"/>
+                <!-- Exit Button -->
+                <Button  
+                    Grid.Column="0"
+                    Style="{StaticResource NoHoverButtonStyle}"
+                    Click="ExitButton_Click"
+                    Margin="20, 0, 0, 0"
+                    Width="80"
+                    Height="45">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="خروج" FontSize="14" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+                        <Image Grid.Column="1" Source="/Assets/icons/exit.png" Width="32" Height="32" VerticalAlignment="Center"/>
+                    </Grid>
+                </Button>
 
-                <!-- Text on the Right -->
-                <TextBlock Grid.Column="1"
+                <!-- Minimize Button -->
+                <Button  
+                    Grid.Column="1"
+                    Style="{StaticResource NoHoverButtonStyle}"
+                    Click="MinimizeButton_Click"
+                    Margin="20, 0, 0, 0"
+                    Height="45">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="کوچک کردن" FontSize="14" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+                        <Image Grid.Column="1" Source="/Assets/icons/minimize.png" Width="32" Height="32" VerticalAlignment="Center"/>
+                    </Grid>
+                </Button>
+
+                <!-- Text on the Center -->
+                <TextBlock Grid.Column="2"
                            Text="میزکار - مدرسه شاهد دخترانه شهیده شهناز کریمی"
                            FontSize="32"
                            FontWeight="Bold"
                            Foreground="White"
-                           HorizontalAlignment="Right"
+                           HorizontalAlignment="Center"
                            VerticalAlignment="Center"
                            Margin="0, 0, 20, 0"/>
+
+                <!-- Logo on the Right -->
+                <Image Grid.Column="3"
+                   Source="/Assets/logo-white.png"
+                   Width="96" Height="96"
+                   VerticalAlignment="Center"
+                   Margin="0,0,15,0"/>
             </Grid>
         </Border>
 
@@ -93,22 +130,6 @@
                     </Grid.ColumnDefinitions>
                     <TextBlock Grid.Column="0" Text="ارتباط با ما" FontSize="24" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0"/>
                     <Image Grid.Column="1" Source="/Assets/icons/contact-us.png" Width="32" Height="32" VerticalAlignment="Center"/>
-                </Grid>
-            </Button>
-
-            <!-- Exit Button -->
-            <Button Width="200" Height="64"
-                   Style="{StaticResource NoHoverButtonStyle}"
-                   Click="ExitButton_Click"
-                   Margin="0,30,0,0"
-                   HorizontalContentAlignment="Right">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Column="0" Text="خروج" FontSize="24" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0"/>
-                    <Image Grid.Column="1" Source="/Assets/icons/exit.png" Width="32" Height="32" VerticalAlignment="Center"/>
                 </Grid>
             </Button>
         </StackPanel>

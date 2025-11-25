@@ -14,6 +14,15 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
+        <!-- Watermark Logo -->
+        <Image Grid.RowSpan="3"
+               Source="/Assets/logo-white.png"
+               Width="400" Height="400"
+               Opacity="0.3"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               IsHitTestVisible="False"/>
+
         <!-- Header -->
         <Border Grid.Row="0"
                 Background="Transparent"
@@ -24,6 +33,7 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="Auto"/>
@@ -32,9 +42,8 @@
 
                 <!-- Left Side: Exit Button -->
                 <Button Grid.Column="0"
-                        Width="120" Height="45"
+                        Width="80" Height="45"
                         Style="{StaticResource NoHoverButtonStyle}"
-                        Margin="0,0,10,0"
                         Click="ExitButton_Click">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <TextBlock Text="خروج" FontSize="14" Foreground="White" VerticalAlignment="Center" Margin="0,0,8,0"/>
@@ -42,8 +51,20 @@
                     </StackPanel>
                 </Button>
 
-                <!-- Left Side: Refresh Button -->
+                <!-- Minimize Button -->
                 <Button Grid.Column="1"
+                        Width="130" Height="45"
+                        Style="{StaticResource NoHoverButtonStyle}"
+                        Margin="0,0,10,0"
+                        Click="MinimizeButton_Click">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <TextBlock Text="کوچک کردن" FontSize="14" Foreground="White" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                        <Image Source="/Assets/icons/minimize.png" Width="24" Height="24"/>
+                    </StackPanel>
+                </Button>
+
+                <!-- Left Side: Refresh Button -->
+                <Button Grid.Column="2"
                         Width="120" Height="45"
                         Style="{StaticResource NoHoverButtonStyle}"
                         Margin="0,0,10,0"
@@ -55,7 +76,7 @@
                 </Button>
 
                 <!-- Center: Title -->
-                <TextBlock Grid.Column="2"
+                <TextBlock Grid.Column="3"
                            x:Name="TitleTextBlock"
                            Text="مدیریت پوشه‌ها"
                            FontSize="28"
@@ -65,7 +86,7 @@
                            VerticalAlignment="Center"/>
 
                 <!-- Right Side: Back to Categories Button -->
-                <Button Grid.Column="3"
+                <Button Grid.Column="4"
                     Width="120" Height="45"
                     Style="{StaticResource NoHoverButtonStyle}"
                     Margin="0,0,10,0"
@@ -77,7 +98,7 @@
                 </Button>
 
                 <!-- Right Side: Home Button -->
-                <Button Grid.Column="4"
+                <Button Grid.Column="5"
                         Width="120" Height="45"
                         Style="{StaticResource NoHoverButtonStyle}"
                         Margin="0,0,10,0"
@@ -89,7 +110,7 @@
                 </Button>
 
                 <!-- Right Side: Add Folder Button -->
-                <Button Grid.Column="5"
+                <Button Grid.Column="6"
                         Width="120" Height="45"
                         Style="{StaticResource NoHoverButtonStyle}"
                         Click="CreateFolderButton_Click">
