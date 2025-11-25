@@ -1,101 +1,77 @@
-# MizeKar - Release v1.0.0
+# MizeKar v1.0.0 Release Notes
 
-## 📋 Release Information
+## Release Information
+
 - **Version**: 1.0.0
-- **Release Date**: $(date)
-- **Platform**: Windows x64
-- **Framework**: .NET 8.0 (Self-Contained)
+- **Release Date**: November 25, 2025
+- **Platform**: Windows 10/11 (64-bit)
+- **Package Size**: ~71 MB (self-contained)
 
-## 🚀 Features
+## What's Included
 
-### Core Features
-- Fullscreen Persian folder management application
-- 9 pre-defined categories with automatic setup
-- Right-to-left (RTL) Persian interface
-- Image display system for chart category
-- Real-time folder monitoring
-- Custom Persian-styled dialogs
+This release package contains:
+- `MizeKar.exe` - Self-contained executable (no .NET installation required)
+- `Assets/` - Application resources (images, icons, fonts)
 
-### Category System
-1. آموزشی (Educational)
-2. پرورشی (Developmental)
-3. انجمن اولیاء (Parents Association)
-4. یادواره شهداء (Martyrs Memorial)
-5. چارت عوامل اجرایی، آموزشی و پرورشی (Chart Display)
-6. ورزش (Sports)
-7. بهداشت (Health)
-8. مشاوره (Counseling)
-9. سایر (Other)
+## Installation
 
-### Technical Features
-- Automatic category folder creation on first run
-- Persian input validation with visual feedback
-- Empty state messages for user guidance
-- Custom application icon
-- Fullscreen window management
-- Keyboard shortcuts support
-
-## 📦 Installation
-
-### System Requirements
-- **OS**: Windows 10 or later
-- **Architecture**: x64
-- **No Dependencies**: Self-contained application
-
-### Quick Start
-1. Extract the release files to your desired location
+1. Extract `MizeKar-Release-v1.0.0.zip` to any folder
 2. Run `MizeKar.exe`
-3. The application will automatically create the Data folder and categories
-4. Use the interface to manage folders within categories
+3. No installation or .NET runtime required!
 
-## 🎯 Usage
+## Features
 
-### Navigation
-- **Login Button**: Access category selection
-- **Category Selection**: 3x3 grid layout
-- **Folder Management**: Create, delete, and view folders
-- **Image Display**: Special handling for chart category
-- **Keyboard Shortcuts**: 
-  - `Escape`: Go back
-  - `Ctrl+N`: Create new folder
+### Navigation & UI
+- **Flicker-Free Navigation** - Smooth, instant page transitions with zero screen flashing
+- **Fullscreen Experience** - Immersive fullscreen interface
+- **Persian Language Support** - Complete RTL support with Shabnam font
+- **Modern UI** - Clean, professional interface with custom dialogs
 
-### Folder Operations
-- **Create**: Persian-only folder names with validation
-- **Delete**: Confirmation dialog for safety
-- **View**: Open folders in Windows Explorer
-- **Refresh**: Manual folder list updates
+### Folder Management
+- **Category-Based Organization** - 9 pre-defined categories in 3×3 grid layout
+- **Real-Time Updates** - File system watcher monitors changes automatically
+- **Persian Input Validation** - Only Persian characters, numbers, spaces, hyphens, and underscores allowed
+- **Empty State Handling** - Clear messages when categories are empty
+- **Windows Explorer Integration** - Open folders directly in Explorer
 
-## 🔧 Technical Details
+### Special Features
+- **Image Display System** - Chart category displays images with upload capability
+- **Fullscreen Image Viewer** - Click images to view fullscreen
+- **Custom Dialogs** - Professional Persian-styled dialogs for all interactions
+- **Keyboard Shortcuts**:
+  - `Escape` - Go back
+  - `Ctrl+N` - Create new folder
+  - `Enter` - Confirm actions
 
-### Build Information
-- **Framework**: .NET 8.0
-- **UI**: WPF (Windows Presentation Foundation)
+## System Requirements
+
+- **OS**: Windows 10 or later (64-bit)
+- **RAM**: 256 MB minimum
+- **Disk Space**: 200 MB free space
+- **Display**: 1024×768 or higher resolution
+
+## Known Issues
+
+None reported in this release.
+
+## Technical Details
+
+- **Framework**: .NET 8.0 (self-contained, no installation required)
+- **Architecture**: Single-window Frame-based navigation
 - **Language**: C# 12.0
-- **Architecture**: x64
-- **Self-Contained**: No .NET runtime required
+- **UI Framework**: WPF (Windows Presentation Foundation)
 
-### File Structure
-```
-Release/
-├── MizeKar.exe          # Main executable
-├── Assets/              # Application assets
-│   ├── images/          # Background images
-│   ├── icons/           # UI icons
-│   └── logo.ico         # Application icon
-├── Data/                # Created automatically
-│   └── [9 Categories]   # Category folders
-└── [Runtime Files]      # .NET runtime components
-```
+## Support
 
-## 📞 Support
+For issues, questions, or feedback:
+- **Email**: osirandoust@gmail.com
+- **Telegram**: https://t.me/osameh_ir
+- **GitHub**: https://github.com/osameh15/Mizekar
 
-For support and questions:
-- Email: osirandoust@gmail.com
-- Contact: [Telegram](https://t.me/osameh_ir)
-
-## 📄 License
+## License
 
 This project is licensed under the MIT License.
 
 ---
+
 **MizeKar** - مدیریت آسان پوشه‌ها با پشتیبانی فارسی
