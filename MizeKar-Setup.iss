@@ -24,6 +24,7 @@ AppCopyright=Copyright (C) 2025 {#MyAppPublisher}
 ; Default installation directory
 DefaultDirName={autopf}\{#MyAppName}
 DefaultGroupName={#MyAppName}
+CreateAppDir=yes
 
 ; Allow user to change installation directory
 DisableDirPage=no
@@ -55,12 +56,12 @@ ArchitecturesAllowed=x64compatible
 ArchitecturesInstallIn64BitMode=x64compatible
 
 ; Version info
-VersionInfoVersion={#MyAppVersion}
+VersionInfoVersion=1.1.0.0
 VersionInfoCompany={#MyAppPublisher}
 VersionInfoDescription={#MyAppName} Setup
 VersionInfoCopyright=Copyright (C) 2025
 VersionInfoProductName={#MyAppName}
-VersionInfoProductVersion={#MyAppVersion}
+VersionInfoProductVersion=1.1.0.0
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
@@ -70,6 +71,10 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked; OnlyBelowVersion: 6.1; Check: not IsAdminInstallMode
+
+[Dirs]
+; Create application directory with full permissions
+Name: "{app}"; Permissions: users-full
 
 [Files]
 ; Main executable and all files from publish folder
