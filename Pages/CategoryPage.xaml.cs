@@ -68,8 +68,8 @@ namespace MizeKar.Pages
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            // Navigate back using NavigationService
-            NavigationService?.GoBack();
+            // Navigate to MainPage (Home)
+            NavigationService?.Navigate(new MainPage());
         }
 
         private void ExitButton_Click(object sender, RoutedEventArgs e)

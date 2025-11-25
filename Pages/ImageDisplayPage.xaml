@@ -89,7 +89,7 @@
                         Style="{StaticResource NoHoverButtonStyle}"
                         Click="BackButton_Click">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                        <TextBlock Text="خانه" FontSize="14" Foreground="White" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                        <TextBlock Text="صفحه اصلی" FontSize="14" Foreground="White" VerticalAlignment="Center" Margin="0,0,8,0"/>
                         <Image Source="/Assets/icons/home.png" Width="24" Height="24"/>
                     </StackPanel>
                 </Button>
