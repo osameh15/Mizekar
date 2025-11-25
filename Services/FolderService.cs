@@ -14,7 +14,7 @@ namespace MizeKar.Services
 
         public FolderService()
         {
-            _dataFolderPath = Path.Combine(Directory.GetCurrentDirectory(), App.DATA_FOLDER_NAME);
+            _dataFolderPath = App.DataFolderPath;
             EnsureDataFolderExists();
             InitializeFileSystemWatcher();
         }
