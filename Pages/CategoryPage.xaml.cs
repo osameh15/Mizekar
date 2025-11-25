@@ -74,8 +74,13 @@ namespace MizeKar.Pages
 
         private void ExitButton_Click(object sender, RoutedEventArgs e)
         {
-            // Exit the application
-            Application.Current.Shutdown();
+            var exitDialog = new ExitConfirmDialog();
+            exitDialog.Owner = Window.GetWindow(this);
+
+            if (exitDialog.ShowDialog() == true && exitDialog.ExitConfirmed)
+            {
+                Application.Current.Shutdown();
+            }
         }
 
         private void MinimizeButton_Click(object sender, RoutedEventArgs e)
