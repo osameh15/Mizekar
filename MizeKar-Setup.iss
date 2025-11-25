@@ -3,7 +3,7 @@
 ; Requires Inno Setup 6.0 or later: https://jrsoftware.org/isinfo.php
 
 #define MyAppName "MizeKar"
-#define MyAppVersion "1.0.0"
+#define MyAppVersion "1.1.0"
 #define MyAppPublisher "Eagle Team"
 #define MyAppURL "https://github.com/osameh15/Mizekar"
 #define MyAppExeName "MizeKar.exe"
@@ -34,6 +34,9 @@ OutputDir=.
 OutputBaseFilename=MizeKar-Setup-v{#MyAppVersion}
 SetupIconFile=Assets\logo.ico
 UninstallDisplayIcon={app}\{#MyAppExeName}
+
+; License file
+LicenseFile=LICENSE.txt
 
 ; Compression
 Compression=lzma2/max
@@ -129,8 +132,8 @@ end;
 
 [Messages]
 ; Custom messages
-WelcomeLabel2=This will install [name/ver] on your computer.%n%nMizeKar is a fullscreen folder manager with Persian language support, category-based organization, and flicker-free navigation.%n%nIt is recommended that you close all other applications before continuing.
-FinishedLabel=MizeKar has been successfully installed on your computer.%n%nYou can now launch the application from the Start Menu or Desktop shortcut.
+WelcomeLabel2=This will install [name/ver] on your computer.%n%nMizeKar Features:%n%n- Fullscreen folder manager with Persian language support%n- Category-based organization (9 colorful categories)%n- Flicker-free page navigation%n- Watermark branding on pages%n- Minimize button on all pages%n- Real-time folder updates%n- Image display system for charts%n- Custom Persian dialogs%n- Keyboard shortcuts support%n%nIt is recommended that you close all other applications before continuing.
+FinishedLabel=MizeKar has been successfully installed on your computer.%n%nYou can now launch the application from the Start Menu or Desktop shortcut.%n%nData will be stored in: %APPDATA%\MizeKar\Data
 
 [CustomMessages]
 ; Additional custom messages
