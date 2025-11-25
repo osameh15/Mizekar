@@ -7,7 +7,10 @@ A modern, fullscreen Windows desktop application for managing folder structures 
 - **Fullscreen Experience** - True fullscreen window with no title bars or borders
 - **Smooth Page Navigation** - Flicker-free navigation using WPF Frame-based architecture
 - **Persian Language Support** - Full UTF-8 support for Persian folder names and UI elements with Shabnam font
-- **Category-Based Organization** - 9 main categories in 3x3 grid layout for structured folder management
+- **Category-Based Organization** - 9 main categories in 3x3 grid layout with colorful backgrounds
+- **Colorized Categories** - Each category has a unique color with 70% opacity for visual distinction
+- **Watermark Logo** - Subtle logo watermark on content pages for branding
+- **Minimize Button** - Window minimize functionality on all pages
 - **Dynamic Folder Management** - Real-time updates when folders are added or deleted
 - **Input Validation** - Persian-only input with visual feedback for invalid characters
 - **Custom Dialogs** - Professional Persian-styled dialogs for all user interactions
@@ -16,6 +19,7 @@ A modern, fullscreen Windows desktop application for managing folder structures 
 - **Image Display System** - Special category for displaying and uploading chart images
 - **Empty State Handling** - User-friendly messages when categories have no folders
 - **Custom Application Icon** - Professional icon for Windows integration
+- **Windows Installer** - Professional Inno Setup installer with desktop/start menu shortcuts
 
 ## 📸 Screenshots
 
@@ -23,7 +27,7 @@ A modern, fullscreen Windows desktop application for managing folder structures 
 
 | Screen | Description | Screenshot |
 |--------|-------------|------------|
-| **Splash Screen** | Displays for 2 seconds with app branding<br>Automatic transition to main screen | ![Splash Screen](./docs/Screenshots/splash-screen.png) |
+| **Splash Screen** | Displays for 5 seconds with app branding<br>Automatic transition to main screen | ![Splash Screen](./docs/Screenshots/splash-screen.png) |
 | **Main Screen** | Fullscreen navigation with Persian/English options<br>Login, About Us, Contact Us, and Exit buttons | ![Main Screen](./docs/Screenshots/main.png) |
 | **Category Screen** | 3x3 grid layout with 9 main categories<br>Category selection for organized folder management | ![Category Screen](./docs/Screenshots/category.png) |
 | **Folder Management** | 4-row optimized display with RTL alignment<br>Category-specific folders with real-time updates | ![Folder Management](./docs/Screenshots/folders.png) |
@@ -38,7 +42,8 @@ A modern, fullscreen Windows desktop application for managing folder structures 
 | **Delete Confirmation** | Safety confirmation for folder deletion<br>Clear information about folder being deleted | ![Delete Folder](./docs/Screenshots/remove-folder.png) |
 | **About Us** | Application information and features<br>Professional Persian-styled interface | ![About Us](./docs/Screenshots/about-us.png) |
 | **Contact Us** | Support information and contact details<br>Clean, readable design | ![Contact Us](./docs/Screenshots/contact-us.png) |
-| **Error Handling** | User-friendly error messages in Persian<br>Consistent with application theme | ![Error Dialog](./docs/Screenshots/error.png) |
+| **Error Handling** | User-friendly error messages in Persian<br>Consistent with application theme | ![Error Dialog](./docs/Screenshots/error-1.png) |
+| **Error Handling 2** | Duplicate folder name error<br>Clear guidance for user | ![Error Dialog 2](./docs/Screenshots/error-2.png) |
 | **Image Upload** | File selection dialog for chart images<br>Real-time status updates | ![Upload Chart](./docs/Screenshots/upload-chart.png) |
 | **Input Validation** | Real-time character validation<br>Visual indicators for valid/invalid input | ![Name Validation](./docs/Screenshots/validate-name.png) |
 
@@ -84,7 +89,7 @@ MizeKar/
 │       ├── about-us.png, add-folder.png, close.png, confirm.png
 │       ├── contact-us.png, enter.png, exit.png, home.png
 │       ├── remove.png, setting.png, stat.png, view.png
-│       ├── refresh.png, categories.png
+│       ├── refresh.png, categories.png, minimize.png
 │   └── logo.ico           # Application icon for Windows
 ├── docs/                  # Documentation and resources
 │   ├── BUILD_INSTRUCTIONS.md  # Detailed build instructions
@@ -152,24 +157,28 @@ dotnet publish -c Release -r win-x64 --self-contained
 
 ### Main Navigation
 
+- **خروج (Exit)** - Closes the application
+- **کوچک کردن (Minimize)** - Minimizes the window to taskbar
 - **ورود (Login)** - Opens category selection screen
 - **درباره ما (About Us)** - Shows application information
 - **ارتباط با ما (Contact Us)** - Shows contact information
-- **خروج (Exit)** - Closes the application
 
 ### Category Selection
 
-- **9 Main Categories** - Pre-defined categories in 3x3 grid layout
+- **9 Main Categories** - Pre-defined categories in 3x3 grid layout with unique colors
+- **Colorful Design** - Each category has a distinct color with 70% opacity
+- **Watermark Logo** - Subtle branding watermark visible behind categories
 - **Category Access** - Click any category to manage its folders
 - **Structured Hierarchy** - All folders are organized under categories
+- **Predefined Order** - Categories always display in consistent order
 
 ### Folder Management
 
-- **Data Folder**: Application creates a "Data" folder in the application directory
+- **Data Folder**: Application creates a "Data" folder in `%APPDATA%\MizeKar\Data`
 - **Category-Based**: Folders are created within selected categories only
 - **Automatic Setup**: 9 main categories are automatically created on first run
 - **Persian Support**: Full support for Persian folder names using UTF-8 encoding
-- **Input Validation**: Only Persian characters, numbers, hyphen (-), and underscore (_) allowed
+- **Input Validation**: Only Persian characters, numbers, hyphen (-), underscore (_), and space allowed
 - **Real-time Updates**: UI updates immediately when folders are added or deleted
 - **Empty State Messages**: Clear "پوشه‌ای وجود ندارد. یک پوشه ایجاد کنید" message when no folders exist
 - **Folder Operations**:
@@ -199,6 +208,8 @@ Key configuration constants in `App.xaml.cs`:
 
 - `DATA_FOLDER_NAME = "Data"` - Root data folder name
 - `SPLASH_SCREEN_DURATION_MS = 5000` - Splash screen duration (5 seconds)
+- `Categories` - Array defining the 9 main categories in display order
+- `DataFolderPath` - Returns `%APPDATA%\MizeKar\Data` for user-writable storage
 
 ## 🧪 Testing
 
@@ -250,32 +261,35 @@ For support and questions:
 
 ## 🔄 Recent Updates
 
-### Version 4.0 - Page-Based Navigation Architecture
+### Version 1.1.0 - UI Enhancements & Installer
 
-- **Flicker-Free Navigation**: Complete rewrite using WPF Frame-based navigation
+- **Colorized Categories**: Each of the 9 categories now has a unique color with 70% opacity
+- **Watermark Logo**: Subtle logo watermark (30% opacity) on Category, Folder Management, and Image Display pages
+- **Minimize Button**: Added window minimize functionality to all pages (کوچک کردن)
+- **Improved Navigation**: Home button navigates to MainPage, Categories button navigates to CategoryPage
+- **Category Order**: Categories now display in predefined order (not by creation time)
+- **Windows Installer**: Professional Inno Setup installer with:
+  - User-selectable installation directory
+  - Desktop and Start Menu shortcuts
+  - Proper uninstaller
+- **Data Storage**: Application data stored in `%APPDATA%\MizeKar\Data` for proper permissions
+
+### Version 1.0.0 - Initial Release
+
+- **Page-Based Navigation**: Flicker-free navigation using WPF Frame-based architecture
 - **Single Window Design**: One main window with Page navigation for zero screen flashing
 - **Instant Transitions**: Smooth, instant page transitions with no desktop background showing
-- **Optimized Performance**: Pages are kept in memory for fast back/forward navigation
-- **Improved UX**: Eliminates all navigation delays and visual glitches
-
-### Version 3.0 - Image Display & Enhanced UX
-
 - **Image Display System**: Special chart category for image upload and display
 - **Empty State Handling**: User-friendly messages for categories with no folders
 - **Custom Application Icon**: Professional icon for Windows integration
 - **Fullscreen Image Viewer**: Click images to view in fullscreen mode
-- **Asset Management**: All images and icons properly copied to output directory
-
-### Version 2.0 - Category System & Enhanced UI
-
 - **Category-Based Organization**: 9 main categories in 3x3 grid layout
 - **Custom Persian Dialogs**: Professional dialogs for all user interactions
 - **Input Validation**: Persian-only input with visual feedback
 - **Right-to-Left Layout**: Natural Persian reading direction
-- **4-Row Display**: Optimized folder management interface
 - **Manual Refresh**: Refresh button for immediate updates
 
-### Technical Improvements
+### Technical Features
 
 - **Page-Based Architecture**: Modern WPF navigation pattern using Frame and Page
 - **File System Watcher**: Category-specific monitoring
