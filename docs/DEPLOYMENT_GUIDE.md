@@ -7,6 +7,7 @@ This guide explains how to build, package, and deploy MizeKar releases.
 - .NET 8.0 SDK installed
 - Git for version control
 - Windows PowerShell (for packaging)
+- Inno Setup 6.0+ (for creating installer) - Download from https://jrsoftware.org/isinfo.php
 
 ## Building a Release
 
@@ -42,7 +43,116 @@ bin/Release/net8.0-windows/win-x64/publish/
 
 **Total Size:** ~170 MB (unpacked)
 
-## Creating Release Package
+## Creating Windows Installer (Recommended)
+
+### Option 1: Professional Installer with Inno Setup
+
+Create a professional Windows installer that allows users to:
+- Choose installation directory
+- Create Desktop shortcuts
+- Create Start Menu shortcuts
+- Uninstall cleanly
+
+#### 1. Install Inno Setup
+
+Download and install from: https://jrsoftware.org/isinfo.php
+
+#### 2. Build Release First
+
+Make sure you've published the release:
+```bash
+dotnet publish -c Release -r win-x64 --self-contained true
+```
+
+#### 3. Compile Installer
+
+**Method 1: Using Inno Setup GUI**
+1. Open Inno Setup Compiler
+2. Open `MizeKar-Setup.iss` file
+3. Click **Build** → **Compile**
+4. Installer will be created: `MizeKar-Setup-v1.0.0.exe`
+
+**Method 2: Using Command Line**
+```bash
+"C:\Program Files (x86)\Inno Setup 6\ISCC.exe" MizeKar-Setup.iss
+```
+
+#### 4. Output
+
+**Installer File:**
+- `MizeKar-Setup-v1.0.0.exe` (~30-35 MB compressed)
+
+**What the installer does:**
+- Installs to `C:\Program Files\MizeKar\` (or user-selected directory)
+- Creates Start Menu shortcuts
+- Creates Desktop shortcut (optional, user choice)
+- Creates uninstaller
+- Registers in Windows Programs & Features
+- Sets proper permissions
+
+#### 5. Test the Installer
+
+```bash
+# Run the installer
+MizeKar-Setup-v1.0.0.exe
+
+# Test installation:
+# 1. Choose installation directory
+# 2. Select Desktop/Start Menu shortcuts
+# 3. Complete installation
+# 4. Launch application
+# 5. Test uninstall from Control Panel
+```
+
+### Installer Features
+
+The Inno Setup script (`MizeKar-Setup.iss`) provides:
+
+✅ **User Choices:**
+- Installation directory selection
+- Desktop shortcut (optional)
+- Start Menu shortcuts
+- Quick Launch shortcut (Windows 7 and below)
+
+✅ **Professional Features:**
+- Modern wizard interface
+- English and Persian language support
+- Custom application icon
+- Proper uninstaller
+- Admin privileges handling
+- 64-bit architecture detection
+
+✅ **Post-Installation:**
+- Option to launch app immediately
+- Proper Windows integration
+- Clean uninstallation
+
+### Customizing the Installer
+
+Edit `MizeKar-Setup.iss` to customize:
+
+**Change version:**
+```pascal
+#define MyAppVersion "1.0.0"  // Change this
+```
+
+**Change default install directory:**
+```pascal
+DefaultDirName={autopf}\{#MyAppName}  // {autopf} = Program Files
+```
+
+**Add/remove shortcuts:**
+```pascal
+[Tasks]
+Name: "desktopicon"; Description: "Create Desktop Icon";
+```
+
+**Change compression:**
+```pascal
+Compression=lzma2/max  // Maximum compression
+```
+
+## Creating Release Package (ZIP - Alternative)
 
 ### 1. Create ZIP Archive
 
@@ -169,15 +279,18 @@ gh release create v1.0.0 \
 Before publishing a release, verify:
 
 - [ ] Version number updated in all relevant files
+- [ ] Version updated in `MizeKar-Setup.iss`
 - [ ] `RELEASE_NOTES.md` created and updated
 - [ ] All tests pass
 - [ ] Clean build successful
 - [ ] Self-contained publish successful
-- [ ] ZIP package created
-- [ ] SHA256 checksum generated
+- [ ] **Installer created** (`MizeKar-Setup-v1.0.0.exe`) - **RECOMMENDED**
+- [ ] ZIP package created (alternative/optional)
+- [ ] SHA256 checksum generated (for ZIP and/or installer)
+- [ ] Installer tested (install, run, uninstall)
 - [ ] Git tag created
 - [ ] Tag pushed to remote
-- [ ] Release files uploaded to GitHub
+- [ ] Release files uploaded to GitHub (installer + optional ZIP)
 - [ ] Release notes added
 - [ ] Release published
 
@@ -208,11 +321,20 @@ Examples:
 
 ### Installation Instructions for Users
 
+**Method 1: Using Installer (Recommended)**
+1. Download `MizeKar-Setup-v1.0.0.exe`
+2. Run the installer
+3. Choose installation directory
+4. Select shortcut options (Desktop, Start Menu)
+5. Click Install
+6. Done! Launch from shortcuts
+
+**Method 2: Using ZIP (Manual)**
 1. Download `MizeKar-Release-v1.0.0.zip`
 2. (Optional) Verify SHA256 checksum
 3. Extract ZIP to any folder (e.g., `C:\Program Files\MizeKar\`)
 4. Run `MizeKar.exe`
-5. No installation or .NET runtime required!
+5. Manually create shortcuts if needed
 
 ### First Run
 
@@ -297,11 +419,18 @@ After completing the deployment process, you'll have:
 
 ```
 MizeKar/
-├── MizeKar-Release-v1.0.0.zip        # Release package (75 MB)
-├── MizeKar-Release-v1.0.0.sha256     # Checksum file
-├── RELEASE_NOTES.md                   # Release documentation
+├── MizeKar-Setup-v1.0.0.exe          # Windows installer (30-35 MB) ✨ RECOMMENDED
+├── MizeKar-Setup-v1.0.0.sha256       # Installer checksum (optional)
+├── MizeKar-Release-v1.0.0.zip        # ZIP package (75 MB) - Alternative
+├── MizeKar-Release-v1.0.0.sha256     # ZIP checksum (optional)
+├── MizeKar-Setup.iss                 # Installer script
+├── RELEASE_NOTES.md                  # Release documentation
 └── bin/Release/net8.0-windows/win-x64/publish/  # Published files (170 MB)
 ```
+
+**Recommended for GitHub Release:**
+- `MizeKar-Setup-v1.0.0.exe` - Primary distribution method
+- `MizeKar-Release-v1.0.0.zip` - Alternative for advanced users
 
 ## Performance Notes
 
