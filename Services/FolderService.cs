@@ -56,10 +56,18 @@ namespace MizeKar.Services
                     return new List<FolderInfo>();
 
                 var directories = Directory.GetDirectories(_dataFolderPath);
-                return directories.Select(dir => new FolderInfo(
-                    Path.GetFileName(dir),
-                    dir
-                )).ToList();
+                // Sort by predefined category order from App.Categories
+                return directories
+                    .OrderBy(dir =>
+                    {
+                        var name = Path.GetFileName(dir);
+                        var index = Array.IndexOf(App.Categories, name);
+                        return index >= 0 ? index : int.MaxValue;
+                    })
+                    .Select(dir => new FolderInfo(
+                        Path.GetFileName(dir),
+                        dir
+                    )).ToList();
             }
             catch (Exception ex)
             {
@@ -77,10 +85,13 @@ namespace MizeKar.Services
                     return new List<FolderInfo>();
 
                 var directories = Directory.GetDirectories(categoryPath);
-                return directories.Select(dir => new FolderInfo(
-                    Path.GetFileName(dir),
-                    dir
-                )).ToList();
+                // Sort by creation time (oldest first)
+                return directories
+                    .OrderBy(dir => Directory.GetCreationTime(dir))
+                    .Select(dir => new FolderInfo(
+                        Path.GetFileName(dir),
+                        dir
+                    )).ToList();
             }
             catch (Exception ex)
             {

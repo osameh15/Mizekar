@@ -14,7 +14,21 @@ namespace MizeKar
             Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
             "MizeKar",
             DATA_FOLDER_NAME);
-        
+
+        // Define the 9 main categories in order
+        public static readonly string[] Categories = new[]
+        {
+            "پرورشی",
+            "آموزشی",
+            "یادواره شهداء",
+            "مشاوره",
+            "انجمن اولیاء",
+            "بهداشت",
+            "ورزش",
+            "چارت عوامل اجرایی، آموزشی و پرورشی",
+            "سایر"
+        };
+
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
@@ -34,22 +48,8 @@ namespace MizeKar
         
         private void EnsureCategoriesExist()
         {
-            // Define the 9 main categories
-            string[] categories = new[]
-            {
-                "آموزشی",
-                "پرورشی", 
-                "انجمن اولیاء",
-                "یادواره شهداء",
-                "چارت عوامل اجرایی، آموزشی و پرورشی",
-                "ورزش",
-                "بهداشت",
-                "مشاوره",
-                "سایر"
-            };
-            
-            // Create each category folder if it doesn't exist
-            foreach (string category in categories)
+            // Create each category folder if it doesn't exist (using predefined order)
+            foreach (string category in Categories)
             {
                 string categoryPath = System.IO.Path.Combine(DataFolderPath, category);
                 if (!System.IO.Directory.Exists(categoryPath))

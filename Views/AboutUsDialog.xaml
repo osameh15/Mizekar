@@ -49,20 +49,20 @@
                 
                 <!-- Content -->
                 <StackPanel Grid.Row="1">
-                    <TextBlock Text="میزکار- مدرسه شاهد شهیده شهناز کریمی" 
+                    <TextBlock Text="مدرسه شاهد شهیده شهناز کریمی" 
                                FontSize="24" 
                                FontWeight="Bold" 
                                Foreground="#2C3E50"
                                HorizontalAlignment="Center"
                                Margin="0,0,0,15"/>
-                    
-                    <TextBlock Text="برنامه مدیریت پوشه‌ها" 
+
+                    <TextBlock Text="میزکار- برنامه مدیریت پوشه‌ها" 
                                FontSize="16" 
                                Foreground="#34495E"
                                HorizontalAlignment="Center"
                                Margin="0,0,0,15"/>
-                    
-                    <TextBlock Text="نسخه ۱.۰.۰" 
+
+                    <TextBlock Text="نسخه ۱.۰.۱" 
                                FontSize="14" 
                                Foreground="#7F8C8D"
                                HorizontalAlignment="Center"
@@ -74,6 +74,13 @@
                                TextWrapping="Wrap"
                                TextAlignment="Right"
                                Margin="0,0,0,20"/>
+
+                    <TextBlock Text="مدیر دبستان سرکار خانم شرمین خوش سیرت" 
+                       FontSize="12" 
+                       Foreground="DarkGray"
+                       TextWrapping="Wrap"
+                       TextAlignment="Center"
+                       Margin="0,20,0,0"/>
                 </StackPanel>
             </Grid>
         </Border>

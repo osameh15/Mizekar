@@ -28,7 +28,7 @@ namespace MizeKar
                 }
                 else
                 {
-                    var errorDialog = new ErrorDialog("نام پوشه فقط می‌تواند شامل حروف فارسی، اعداد، فاصله، خط تیره (-) و زیرخط (_) باشد.");
+                    var errorDialog = new ErrorDialog("نام پوشه فقط می‌تواند شامل حروف فارسی، اعداد، فاصله، خط تیره (-) و زیرخط (_) باشد");
                     errorDialog.Owner = this;
                     errorDialog.ShowDialog();
                     FolderNameTextBox.Focus();
@@ -36,7 +36,7 @@ namespace MizeKar
             }
             else
             {
-                MessageBox.Show("لطفاً نام پوشه را وارد کنید.", 
+                MessageBox.Show("لطفاً نام پوشه را وارد کنید", 
                               "خطا", 
                               MessageBoxButton.OK, 
                               MessageBoxImage.Warning);

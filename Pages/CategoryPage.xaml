@@ -93,7 +93,8 @@
                     <ItemsPanelTemplate>
                         <UniformGrid Columns="3" Rows="3"
                                    HorizontalAlignment="Center"
-                                   VerticalAlignment="Top"/>
+                                   VerticalAlignment="Top"
+                                   FlowDirection="RightToLeft"/>
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
 
