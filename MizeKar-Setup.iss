@@ -3,7 +3,7 @@
 ; Requires Inno Setup 6.0 or later: https://jrsoftware.org/isinfo.php
 
 #define MyAppName "MizeKar"
-#define MyAppVersion "1.1.0"
+#define MyAppVersion "1.1.1"
 #define MyAppPublisher "Eagle Team"
 #define MyAppURL "https://github.com/osameh15/Mizekar"
 #define MyAppExeName "MizeKar.exe"
@@ -56,12 +56,12 @@ ArchitecturesAllowed=x64compatible
 ArchitecturesInstallIn64BitMode=x64compatible
 
 ; Version info
-VersionInfoVersion=1.1.0.0
+VersionInfoVersion=1.1.1.0
 VersionInfoCompany={#MyAppPublisher}
 VersionInfoDescription={#MyAppName} Setup
 VersionInfoCopyright=Copyright (C) 2025
 VersionInfoProductName={#MyAppName}
-VersionInfoProductVersion=1.1.0.0
+VersionInfoProductVersion=1.1.1.0
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"

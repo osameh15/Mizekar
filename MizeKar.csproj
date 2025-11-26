@@ -8,8 +8,8 @@
 
     <AssemblyTitle>MizeKar</AssemblyTitle>
     <AssemblyDescription>Fullscreen Windows application for managing folder structures with Persian support</AssemblyDescription>
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <FileVersion>1.0.0.0</FileVersion>
+    <AssemblyVersion>1.1.1.0</AssemblyVersion>
+    <FileVersion>1.1.1.0</FileVersion>
     <RootNamespace>MizeKar</RootNamespace>
     <ApplicationIcon>Assets\logo.ico</ApplicationIcon>
   </PropertyGroup>
