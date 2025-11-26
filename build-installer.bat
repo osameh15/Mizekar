@@ -51,7 +51,7 @@ echo ========================================
 echo SUCCESS!
 echo ========================================
 echo.
-echo Installer created: MizeKar-Setup-v1.0.0.exe
+echo Installer created: MizeKar-Setup-v1.1.1.exe
 echo.
 echo Next steps:
 echo 1. Test the installer
@@ -67,8 +67,8 @@ if errorlevel 1 goto generate_checksum
 :generate_checksum
 echo.
 echo Generating SHA256 checksum...
-powershell -Command "Get-FileHash MizeKar-Setup-v1.0.0.exe -Algorithm SHA256 | Select-Object -ExpandProperty Hash" > MizeKar-Setup-v1.0.0.sha256
-echo [OK] Checksum saved to: MizeKar-Setup-v1.0.0.sha256
+powershell -Command "Get-FileHash MizeKar-Setup-v1.1.1.exe -Algorithm SHA256 | Select-Object -ExpandProperty Hash" > MizeKar-Setup-v1.0.0.sha256
+echo [OK] Checksum saved to: MizeKar-Setup-v1.1.1.sha256
 echo.
 type MizeKar-Setup-v1.0.0.sha256
 echo.
