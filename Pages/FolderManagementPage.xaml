@@ -156,13 +156,16 @@
 
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <Border Background="#34495E"
+                            <Border Background="{Binding Color}"
                                     CornerRadius="8"
                                     Margin="10"
                                     Padding="15"
                                     Width="200"
                                     Height="120">
-                                <Grid>
+                                    <Border.Effect>
+                                        <DropShadowEffect ShadowDepth="4" Opacity="0.3" BlurRadius="10"/>
+                                    </Border.Effect>
+                                    <Grid>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="*"/>
                                         <RowDefinition Height="Auto"/>

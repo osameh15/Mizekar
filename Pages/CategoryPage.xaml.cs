@@ -29,15 +29,15 @@ namespace MizeKar.Pages
         // Colors for each category (9 distinct colors with 0.7 opacity)
         private static readonly string[] CategoryColors = new[]
         {
-            "#B300BCD4", // Cyan - آموزشی
-            "#B33498DB", // Blue - انجمن اولیاء
-            "#B32ECC71", // Green - بهداشت
-            "#B39B59B6", // Purple - سایر
-            "#B3F39C12", // Orange - مشاوره
-            "#B31ABC9C", // Teal - ورزش
-            "#B3E91E63", // Pink - پرورشی
+            "#B300BCD4", // Cyan - پرورشی
+            "#B33498DB", // Blue - آموزشی
+            "#B32ECC71", // Green - یادواره شهداء
+            "#B39B59B6", // Purple - مشاوره
+            "#B3F39C12", // Orange - انجمن اولیاء
+            "#B31ABC9C", // Teal - بهداشت
+            "#B3E91E63", // Pink - ورزش
             "#B3607D8B", // Gray - چارت عوامل اجرایی
-            "#B3E74C3C" // Red - یادواره شهداء
+            "#B3E74C3C" // Red - سایر
         };
 
         private void LoadCategories()
@@ -98,6 +98,17 @@ namespace MizeKar.Pages
             {
                 var categoryName = System.IO.Path.GetFileName(categoryPath);
 
+                // Find the category color
+                string? categoryColor = null;
+                foreach (var category in _categories)
+                {
+                    if (category.Path == categoryPath)
+                    {
+                        categoryColor = category.Color;
+                        break;
+                    }
+                }
+
                 // Special handling for chart category
                 if (categoryName == "چارت عوامل اجرایی، آموزشی و پرورشی")
                 {
@@ -106,8 +117,8 @@ namespace MizeKar.Pages
                 }
                 else
                 {
-                    // Navigate to FolderManagementPage with the selected category
-                    NavigationService?.Navigate(new FolderManagementPage(categoryPath));
+                    // Navigate to FolderManagementPage with the selected category and color
+                    NavigationService?.Navigate(new FolderManagementPage(categoryPath, categoryColor));
                 }
             }
         }

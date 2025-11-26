@@ -14,16 +14,18 @@ namespace MizeKar.Pages
         private readonly FolderService _folderService;
         private readonly ObservableCollection<FolderInfo> _folders;
         private readonly string? _categoryPath;
+        private readonly string _folderColor;
 
-        public FolderManagementPage() : this(null)
+        public FolderManagementPage() : this(null, null)
         {
         }
 
-        public FolderManagementPage(string? categoryPath)
+        public FolderManagementPage(string? categoryPath, string? categoryColor = null)
         {
             InitializeComponent();
 
             _categoryPath = categoryPath;
+            _folderColor = GetLighterColor(categoryColor ?? "#B334495E");
             _folderService = new FolderService();
             _folders = new ObservableCollection<FolderInfo>();
 
@@ -41,6 +43,35 @@ namespace MizeKar.Pages
 
             // Subscribe to folder changes
             _folderService.FoldersChanged += OnFoldersChanged;
+        }
+
+        // Convert category color to a lighter version for folder items
+        private string GetLighterColor(string argbColor)
+        {
+            // Input format: #AARRGGBB (e.g., #B33498DB)
+            // Make it lighter by increasing RGB values and keeping same alpha
+            try
+            {
+                if (argbColor.Length == 9 && argbColor.StartsWith("#"))
+                {
+                    string alpha = argbColor.Substring(1, 2);
+                    int r = Convert.ToInt32(argbColor.Substring(3, 2), 16);
+                    int g = Convert.ToInt32(argbColor.Substring(5, 2), 16);
+                    int b = Convert.ToInt32(argbColor.Substring(7, 2), 16);
+
+                    // Lighten by mixing with white (increase by 30%)
+                    r = Math.Min(255, r + (255 - r) * 30 / 100);
+                    g = Math.Min(255, g + (255 - g) * 30 / 100);
+                    b = Math.Min(255, b + (255 - b) * 30 / 100);
+
+                    return $"#{alpha}{r:X2}{g:X2}{b:X2}";
+                }
+            }
+            catch
+            {
+                // Fallback to default color
+            }
+            return "#B334495E";
         }
 
         private void LoadFolders()
@@ -64,6 +95,8 @@ namespace MizeKar.Pages
 
             foreach (var folder in folders)
             {
+                // Apply category color to each folder
+                folder.Color = _folderColor;
                 _folders.Add(folder);
             }
 
