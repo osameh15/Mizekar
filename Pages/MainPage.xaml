@@ -82,57 +82,63 @@
             </Grid>
         </Border>
 
-        <!-- Navigation Buttons -->
-        <StackPanel Grid.Row="1"
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Center"
-                    Width="300">
+        <!-- Navigation Buttons - Triangle Layout -->
+        <Grid Grid.Row="1"
+              VerticalAlignment="Center"
+              HorizontalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
 
-            <Button Width="200" Height="64"
+            <!-- Enter Button - Top Center (larger, icon only) -->
+            <Button Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                   Width="108" Height="108"
                    Style="{StaticResource NoHoverButtonStyle}"
                    Click="LoginButton_Click"
-                   Margin="0,0,0,20"
-                   HorizontalContentAlignment="Right">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Column="0" Text="ورود" FontSize="24" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0"/>
-                    <Image Grid.Column="1" Source="/Assets/icons/enter.png" Width="32" Height="32" VerticalAlignment="Center"/>
-                </Grid>
+                   Margin="0,0,0,40"
+                   HorizontalAlignment="Center">
+                <Image Source="/Assets/icons/enter.png" Width="108" Height="108"/>
             </Button>
 
-            <Button Width="200" Height="64"
+            <!-- About Us Button - Bottom Left -->
+            <Button Grid.Row="1" Grid.Column="0"
+                   Width="180" Height="64"
                    Style="{StaticResource NoHoverButtonStyle}"
                    Click="AboutUsButton_Click"
-                   Margin="0,0,0,20"
-                   HorizontalContentAlignment="Right">
+                   Margin="0,0,0,0"
+                   HorizontalContentAlignment="Left">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Column="0" Text="درباره ما" FontSize="24" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0"/>
-                    <Image Grid.Column="1" Source="/Assets/icons/about-us.png" Width="32" Height="32" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="0" Text="درباره ما" FontSize="20" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+                    <Image Grid.Column="1" Source="/Assets/icons/about-us.png" Width="48" Height="48" VerticalAlignment="Center"/>
                 </Grid>
             </Button>
 
-            <Button Width="200" Height="64"
+            <!-- Contact Us Button - Bottom Right -->
+            <Button Grid.Row="1" Grid.Column="1"
+                   Width="180" Height="64"
                    Style="{StaticResource NoHoverButtonStyle}"
                    Click="ContactUsButton_Click"
-                   Margin="0,0,0,20"
+                   Margin="0,0,0,0"
                    HorizontalContentAlignment="Right">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Column="0" Text="ارتباط با ما" FontSize="24" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0"/>
-                    <Image Grid.Column="1" Source="/Assets/icons/contact-us.png" Width="32" Height="32" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="0" Text="ارتباط با ما" FontSize="20" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+                    <Image Grid.Column="1" Source="/Assets/icons/contact-us.png" Width="48" Height="48" VerticalAlignment="Center"/>
                 </Grid>
             </Button>
-        </StackPanel>
+        </Grid>
     </Grid>
 
 </Page>
