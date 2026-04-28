@@ -183,7 +183,6 @@ publish/
 # Microsoft Azure Web App publish settings. Comment the next line if you want to
 # checkin your Azure Web App publish settings, but sensitive information contained
 # in these files will be unencrypted
-*.azurePubxml
 
 # Microsoft Azure Build Output
 csx/
@@ -380,7 +379,6 @@ Data/
 *.nupkg
 
 # WPF temporary files
-*.tmp
 
 # Local development files
 local.settings.json
@@ -395,7 +393,6 @@ local.settings.json
 ._*
 .Spotlight-V100
 .Trashes
-ehthumbs.db
 [Tt]humbs.db
 
 # Application specific
@@ -411,37 +408,25 @@ bin/
 obj/
 
 # Publish output
-publish/
 
 # User-specific files
-*.user
-*.suo
 
 # Build results
-[Dd]ebug/
-[Dd]ebugPublic/
-[Rr]elease/
-[Rr]eleases/
 
 # Visual Studio cache files
-.vs/
 
 # MSTest test Results
-[Tt]est[Rr]esult*
-[Bb]uild[Ll]og.*
 
 # Auto-generated files
 *.Designer.cs
 *.Designer.vb
 
 # WPF temporary files
-*.tmp
 
 # Package files
-*.nupkg
 
 # Application Data folder (created by app)
-Data/
 
 # Local development files
-local.settings.json
+*.0.0.sha256
+/MizeKar-Setup-v1.1.1.exe
